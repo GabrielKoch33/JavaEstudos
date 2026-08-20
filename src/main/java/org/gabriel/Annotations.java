@@ -7,8 +7,8 @@ public class Annotations {
 }
 /* Como o Java funciona?
 
--> Java Applicatiom Programimg Interfacem (API):
-    Conjunto de bibiliotecas Java embutidas que remove a necessidade de termos que escrever tudo do zero.
+-> Java Application Programing Interface (API):
+    Conjunto de bibliotecas Java embutidas que remove a necessidade de termos que escrever tudo do zero.
     (ex: métodos http, conexões com banco, matemáticas, etc).
 
 -> Java Virtual Machine (JVM):
@@ -16,6 +16,7 @@ public class Annotations {
     '.java' vira '.class' devido ao compilador -> JVM -> máquina.
 
 Edições Java:
+
 -> Java EE:
     Plataforma projetada para sistemas de larga escala e demanda,
     sistemas web, APIs, segurança e escalabilidade.
@@ -33,10 +34,11 @@ Edições Java:
 ==============================================================================
                                     DICAS
 ==============================================================================
---> O nome da classe deve ser o mesmo que o nome do arquivo
+
+-> O nome da classe deve ser o mesmo que o nome do arquivo
     class NomeDoArquivo {...} = declaração de uma classe;
 
---> Declaração da main:
+-> Declaração da main:
     É obrigatória, qualquer projeto terá uma main() que será o ponto de partida do código.
 
     public = visibilidade e acesso da classe, nesse caso ela é acessível para qualquer outro função ou pacote;
