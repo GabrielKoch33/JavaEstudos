@@ -1,4 +1,4 @@
-package org.gabriel.cursos;
+package org.gabriel.pessoal;
 
 public class TypeErrors {    public static void main(String[] args) {
     System.out.println("1 - Erros de Sintaxe");

@@ -1,4 +1,4 @@
-package org.gabriel.cursos;
+package org.gabriel.pessoal;
 
 public class Annotations {
     public static void main(String[] args){
@@ -45,4 +45,17 @@ Edições Java:
     static = permite executar a classe sem a necessidade de instanciar um objeto antes, ou seja, será única e tudo ocorre por meio dela;
     void   = define valor de retorno da função, nesse caso void = sem retorno;
     main   = nome da função, é pela main() que o java encontra o ponto de partida do programa;
+
+
+==============================================================================
+                                    COMENTÁRIOS
+==============================================================================
+@author	    Nome do desenvolvedor
+@deprecated	Marca o método como deprecated. Algumas IDEs exibirão um alerta de compilação se o método for chamado.
+@exception	Documenta uma exceção lançada por um método — veja também @throws.
+@param	    Define um parâmetro do método. Requerido para cada parâmetro.
+@return	    Documenta o valor de retorno. Essa tag não deve ser usada para construtores ou métodos definidos com o tipo de retorno void.
+@see	    Documenta uma associação a outro método ou classe.
+@since	    Documenta quando o método foi adicionado a a classe.
+@throws	    Documenta uma exceção lançada por um método. É um sinônimo para a @exception introduzida no Javadoc 1.2.
 */
