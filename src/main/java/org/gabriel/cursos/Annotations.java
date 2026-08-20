@@ -1,4 +1,4 @@
-package org.gabriel;
+package org.gabriel.cursos;
 
 public class Annotations {
     public static void main(String[] args){
