@@ -41,8 +41,8 @@ Edições Java:
 -> Declaração da main:
     É obrigatória, qualquer projeto terá uma main() que será o ponto de partida do código.
 
-    public = visibilidade e acesso da classe, nesse caso ela é acessível para qualquer outro função ou pacote;
-    static = permite executar a classe sem a necessidade de instanciar um objeto antes;
+    public = visibilidade e acesso da classe, permitindo ser visivel a qualquer outra, é necessário ser public para a JVM ler
+    static = permite executar a classe sem a necessidade de instanciar um objeto antes, ou seja, será única e tudo ocorre por meio dela;
     void   = define valor de retorno da função, nesse caso void = sem retorno;
-    main   = nome da função, pode ser qualquer nome;
+    main   = nome da função, é pela main() que o java encontra o ponto de partida do programa;
 */
