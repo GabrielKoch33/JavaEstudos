@@ -56,6 +56,6 @@ Edições Java:
 @param	    Define um parâmetro do método. Requerido para cada parâmetro.
 @return	    Documenta o valor de retorno. Essa tag não deve ser usada para construtores ou métodos definidos com o tipo de retorno void.
 @see	    Documenta uma associação a outro método ou classe.
-@since	    Documenta quando o método foi adicionado a a classe.
+@since	    Documenta quando o método foi adicionado a classe.
 @throws	    Documenta uma exceção lançada por um método. É um sinônimo para a @exception introduzida no Javadoc 1.2.
 */

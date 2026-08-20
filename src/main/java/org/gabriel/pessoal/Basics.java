@@ -13,7 +13,7 @@ public class Basics {
         /* Criando variáveis e atribuindo o input a elas;
          nextLine() lê strings, incluindo espaços;
          nextInt() lê inteiros;
-         nextLine() lê apenas a primeira cadeia string;
+         next() lê apenas a primeira cadeia string;
          nextDouble() lê decimal;
          'ler' é o objeto que receberá dados do teclado;
         */
