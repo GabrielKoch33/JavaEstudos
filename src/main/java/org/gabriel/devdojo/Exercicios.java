@@ -1,9 +1,7 @@
-package org.gabriel.pessoal;
-import java.awt.desktop.SystemSleepEvent;
-import java.net.IDN;
+package org.gabriel.devdojo;
 import java.util.Scanner;
 
-public class Basics {
+public class Exercicios {
     /*
     * Se estivessemos em uma grande aplicação teriamos esse arquivo como
     * class Main, contendo o único método main() de todo o projeto.
