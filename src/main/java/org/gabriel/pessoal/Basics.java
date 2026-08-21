@@ -51,23 +51,5 @@ public class Basics {
         for ( int year : years){
             System.out.println("Actual value: " + year);
         }
-
-        System.out.println("Pick one food: ");
-        System.out.println("1 - Pizza\n 2 - Hamburguer\n 3 - Pastel");
-        int option = ler.nextInt();
-
-        switch (option){
-            case 1:
-                System.out.println("You have ordered a Pizza!");
-                break;
-            case 2:
-                System.out.println("You have ordered a Hamburger!");
-                break;
-            case 3:
-                System.out.println("You have ordered a Pastel!");
-                break;
-            default:
-                System.out.println("Choose a valid option!");
-        }
     }
 }

@@ -1,14 +1,15 @@
 package org.gabriel.pessoal;
 
-public class TypeErrors {    public static void main(String[] args) {
-    System.out.println("1 - Erros de Sintaxe");
-    ErrosSintaxe();
-    System.out.println("2 - Erros de Semântica");
-    ErrosSemantica();
-    System.out.println("3 - Erros em Tempo de Execução");
-    ErrosTempoExec();
-    System.out.println(" -- FIM DO PROGRAMA -- ");
-    }
+public class TypeErrors {
+    public static void main(String[] args) {
+        System.out.println("1 - Erros de Sintaxe");
+        ErrosSintaxe();
+        System.out.println("2 - Erros de Semântica");
+        ErrosSemantica();
+        System.out.println("3 - Erros em Tempo de Execução");
+        ErrosTempoExec();
+        System.out.println(" -- FIM DO PROGRAMA -- ");
+        }
 
     public static void ErrosSintaxe() {
         System.out.println("--> Erros em que a gramática foge do padrão esperado pelo Java");

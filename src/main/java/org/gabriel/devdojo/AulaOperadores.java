@@ -2,7 +2,7 @@ package org.gabriel.devdojo;
 
 import java.util.Scanner;
 
-public class aula04Operadores {
+public class AulaOperadores {
     public static void main (String[] args) {
         // + - * / %
         // < <= > >= == !=
@@ -52,6 +52,53 @@ public class aula04Operadores {
             System.out.println("Menor de idade E bêbado");
         } else {
             System.out.println("Pode dirigir =)");
+        }
+        // operador ternário;
+        double heightPeople = ler.nextDouble();
+        String resultado = heightPeople > 1.70 ? "Entre" : "Entrada Proibida";
+        // tipo variável = (condição) ? caso_true : caso_false;
+        System.out.println(resultado);
+
+        int dayOfWeek = ler.nextInt();
+        switch (dayOfWeek){
+            case 1:
+                System.out.println("Domingo");
+                break;
+            case 2:
+                System.out.println("Segunda");
+                break;
+            case 3:
+                System.out.println("Terça");
+                break;
+            case 4:
+                System.out.println("Quarta");
+                break;
+            case 5:
+                System.out.println("Quinta");
+                break;
+            case 6:
+                System.out.println("Sexta");
+                break;
+            default:
+                System.out.println("Dia não criado ainda");
+            // Usamos break pq sempre que o case é verdadeiro ele executa o bloco atual + seguintes
+        }
+
+        System.out.println("Pick one food: ");
+        System.out.println("1 - Pizza\n 2 - Hamburguer\n 3 - Pastel");
+        int option = ler.nextInt();
+        switch (option){
+            case 1:
+                System.out.println("You have ordered a Pizza!");
+                break;
+            case 2:
+                System.out.println("You have ordered a Hamburger!");
+                break;
+            case 3:
+                System.out.println("You have ordered a Pastel!");
+                break;
+            default:
+                System.out.println("Choose a valid option!");
         }
     }
 }

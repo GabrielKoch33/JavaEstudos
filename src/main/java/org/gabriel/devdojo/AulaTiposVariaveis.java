@@ -1,7 +1,7 @@
 package org.gabriel.devdojo;
 import java.util.Scanner;
 
-public class Aula02TiposVariaveis {
+public class AulaTiposVariaveis {
     public static void main(String[] args) {
         // int, double, float, char, byte, short, long, boolean
         Scanner ler = new Scanner(System.in);
