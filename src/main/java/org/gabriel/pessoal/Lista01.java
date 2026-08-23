@@ -9,26 +9,99 @@ public class Lista01 {
     Saída esperada: os primos impressos separados por vírgula.
     **/
     public static void crivoDeEratosthenes() {
-        boolean[] arrPrimos = new boolean[101]; // 0 a 100;
-        arrPrimos[2] = true;
-        for (int i = 2; i < arrPrimos.length; i++) {
+        boolean[] arrNumeros = new boolean[101]; // 0 a 100;
+        int lastCheck = (int)Math.sqrt(100);
+        int j = 0;
+        int i = 0;
 
+        // O crivo define naturalmente que todos os números são primos
+        for (i = 0; i < arrNumeros.length; i++){
+            arrNumeros[i] = true;
+        }
+
+        for (i = 2; i < arrNumeros.length; i++) {
+            // Fazemos a busca de múltiplos naqueles que não foram "riscados"
+            if (arrNumeros[i]){
+                j = i+1;
+                // O crivo define a raiz de N como o limite para procurarmos múltiplos
+                if (i >= lastCheck){
+                    break;
+                } else {
+                    // Percorremos o vetor eliminando todos os múltiplos possível do atual Nº primo
+                    while(j <= 100) {
+                        if (j % i == 0) {
+                            arrNumeros[j] = false;
+                        }
+                        j++;
+                    }
+                }
+            }
+        }
+        // Print
+        for (i = 0; i <= arrNumeros.length; i++ ){
+            if (arrNumeros[i]){
+                System.out.println(i);
+            }
+        }
+    }
+
+    /**
+    Validador de Placa de Carro
+    Valide se uma String corresponde a um dos dois formatos de placa brasileira:
+          - Formato antigo: AAA-9999 (3 letras, hífen, 4 dígitos)
+          - Formato Mercosul: AAA9A99 (3 letras, 1 dígito, 1 letra, 2 dígitos)
+    Teste com pelo menos 5 placas diferentes (algumas válidas, outras não) declaradas em um array de Strings, e imprima o resultado da validação de cada uma.
+    Pesquise: métodos da classe Character que dizem se um char é letra ou dígito.
+    Você vai precisar percorrer a String caractere por caractere — cuidado com o tamanho fixo esperado em cada posição.
+     **/
+    public static void validadorPlacaCarro(){
+        String placa = "AAA-9999"; // AAA9A99
+        char[] arrPlaca = new char[8];
+        int digit = 0; 
+        int letter = 0; 
+        int hifen = 0;
+        // no formato Mercosul o último índice será null
+        if (placa.length() == 8){
+            // Formato Antigo
+            placa.getChars(0, placa.length(), arrPlaca,0);
+            for (char l: arrPlaca){
+                if (l == '-'){
+                    hifen += 1; 
+                } else if (Character.isDigit(l)) {
+                    digit += 1;
+                } else if (Character.isLetter(l)){
+                    letter += 1;
+                }
+            }
+            if (hifen == 1 && digit == 4  && letter == 3) {
+                System.out.println("Formato Válido!");
+            }
+        } else if (placa.length() == 7) {
+            // Formato Mercosul
+            placa.getChars(0,placa.length(), arrPlaca,0);
+            for (char l: arrPlaca){
+                if (l == '\u0000'){
+                    continue;
+                }
+                else if (Character.isDigit(l)){
+                    digit += 1;
+                } else if (Character.isLetter(l)){
+                    letter += 1;
+                }
+            }
+            if (digit == 3 && letter == 4){
+                System.out.println("Formato Válido!");
+            }
+        } else {
+            System.out.println("Formato Inválido");
         }
 
     }
-    public static void main (String[] args) {
 
-//==== Exercício 2 ====
-//Validador de Placa de Carro
-//Valide se uma String corresponde a um dos dois formatos de placa brasileira:
-//        - Formato antigo: AAA-9999 (3 letras, hífen, 4 dígitos)
-//        - Formato Mercosul: AAA9A99 (3 letras, 1 dígito, 1 letra, 2 dígitos)
-//
-//Teste com pelo menos 5 placas diferentes (algumas válidas, outras não) declaradas em um array de Strings, e imprima o resultado da validação de cada uma.
-//Pesquise: métodos da classe Character que dizem se um char é letra ou dígito.
-//Você vai precisar percorrer a String caractere por caractere — cuidado com o tamanho fixo esperado em cada posição.
-//
-//
+    public static void main (String[] args) {
+        crivoDeEratosthenes();
+        validadorPlacaCarro();
+
 //==== Exercício 3 ====
 //Caixa Eletrônico (Dispensador de Notas)
 //Dado um valor a sacar (ex: R$ 385) e um array com as notas disponíveis ({100, 50, 20, 10, 5, 2}).
