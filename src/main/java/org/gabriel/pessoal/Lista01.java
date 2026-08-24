@@ -1,5 +1,6 @@
 package org.gabriel.pessoal;
 
+import jdk.swing.interop.SwingInterOpUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -61,19 +62,19 @@ public class Lista01 {
     Você vai precisar percorrer a String caractere por caractere — cuidado com o tamanho fixo esperado em cada posição.
      **/
     public static void validadorPlacaCarro(String placa){
-        // AAA9A99 - AAA-9999
         char[] arrPlaca = new char[8];
         char[] arrMercosul = {'A','A','A','9','A','9','9'};
-        //                     0 , 1 , 2 , 3 , 4 , 5 , 6,  7
         char[] arrAntigo   = {'A','A','A','-','9','9','9','9'};
         boolean isValid = true;
         int i = 0;
 
         if (placa.length() < 7){
+            // se não tiver o nº min de caracteres
             isValid = false;
         }
         try {
             placa.getChars(0, placa.length(), arrPlaca,0);
+            // caso tenha mais caracteres que o permitido
         } catch (StringIndexOutOfBoundsException e) {
             System.out.println("Tamanho de caracteres excedido! Tente novamente");
         } catch (Exception e) {
@@ -93,6 +94,7 @@ public class Lista01 {
                 }
             } else {
                 if (arrPlaca[3] != '-') {
+                    // se não possuir '-' já desconsideramos
                     isValid = false;
                 } else {
                     for (i = 0; i < arrPlaca.length; i++) {
@@ -117,22 +119,48 @@ public class Lista01 {
         }
     }
 
-    //public static void
+    /**
+    Dado um valor a sacar(ex: R$ 385) e um array com as notas disponíveis ({100, 50, 20, 10, 5, 2}).
+    Calcule a quantidade de cada nota usando o algoritmo guloso (sempre usa a maior nota possível primeiro).
+    Depois, teste com um valor que não é múltiplo de 2 (ex: R$ 387) e trate esse caso — o que deveria acontecer?
+    Pesquise: a diferença entre / e % para números inteiros em Java, e por que a ordem do array de notas (decrescente) importa tanto aqui.
+    */
+    public static void caixaEletronico(int saque){
+        int[] arrNotas = {100,50,20,10,5,2};
+        int valorAtual = saque;
+        int i = 0;
+        int qtdNota;
+        while (valorAtual != 0 ){
+            if (valorAtual == 1){
+                System.out.println("Foram usada(s) " + 1 + " nota(s) de R$" + 1);
+                valorAtual -= 1;
+                break;
+                // break pq depois mesmo que chegue a 0 o bloco abaixo do while
+                // é executado gerando -> 0 = 0/2
+            }
+            while (i < arrNotas.length-1 && valorAtual/arrNotas[i] <= 0){
+                ++i;
+            }
+
+            qtdNota = valorAtual/arrNotas[i];
+            System.out.println("Foram usada(s) " + qtdNota + " nota(s) de R$" + arrNotas[i]);
+            valorAtual -= arrNotas[i]*qtdNota;
+        }
+
+        String resultado =  valorAtual == 0 ? "Saque bem sucedido" : "Saque mal sucedido";
+        System.out.println(resultado);
+    }
 
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
         crivoDeEratosthenes();
         String placa = input.next();
         validadorPlacaCarro(placa);
+        int valor = input.nextInt();
+        caixaEletronico(valor);
 
-//==== Exercício 3 ====
-//Caixa Eletrônico (Dispensador de Notas)
-//Dado um valor a sacar (ex: R$ 385) e um array com as notas disponíveis ({100, 50, 20, 10, 5, 2}).
-//Calcule a quantidade de cada nota usando o algoritmo guloso (sempre usa a maior nota possível primeiro).
-//Depois, teste com um valor que não é múltiplo de 2 (ex: R$ 387) e trate esse caso — o que deveria acontecer?
-//Pesquise: a diferença entre / e % para números inteiros em Java, e por que a ordem do array de notas (decrescente) importa tanto aqui.
-//
-//
+
+
 //==== Exercício 4 ====
 //Jogo da Velha — Verificador de Vencedor
 //Declare uma matriz char[3][3] já preenchida manualmente com 'X', 'O' e espaços vazios simulando um tabuleiro finalizado. Escreva a lógica que verifica se houve vencedor, checando:
@@ -161,12 +189,14 @@ public class Lista01 {
 //        - Mediana (isso exige ordenar o array você mesmo — implemente um Bubble Sort)
 //        - Moda (valor que mais se repete)
 //
-//Pesquise: por que a média pode dar um resultado "estranho" se você usar int em vez de double na divisão. E o que muda no cálculo da mediana se a quantidade de elementos for par.
+//Pesquise: por que a média pode dar um resultado "estranho" se você usar int em vez de double na divisão.
+//E o que muda no cálculo da mediana se a quantidade de elementos for par.
 //
 //
 //==== Exercício 7 ====
 //Matriz Mágica (Magic Square)
-//Verifique se uma matriz int[3][3], preenchida manualmente por você, é um quadrado mágico: a soma de cada linha, cada coluna e as duas diagonais deve ser igual.
+//Verifique se uma matriz int[3][3], preenchida manualmente por você,
+//é um quadrado mágico: a soma de cada linha, cada coluna e as duas diagonais deve ser igual.
 //Teste com uma matriz que É mágica e outra que não é.
 //Pesquise: o exemplo clássico de quadrado mágico 3x3 (números de 1 a 9) — tente montar um você mesmo antes de testar.
 //
