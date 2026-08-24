@@ -1,5 +1,10 @@
 package org.gabriel.pessoal;
 
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.*;
+import java.util.Scanner;
+
 public class Lista01 {
     /**
     Gere, sem usar nenhuma biblioteca pronta de "é primo", todos os números primos entre 2 e 100 usando o algoritmo do Crivo de Eratosthenes:
@@ -15,7 +20,7 @@ public class Lista01 {
         int i = 0;
 
         // O crivo define naturalmente que todos os números são primos
-        for (i = 0; i < arrNumeros.length; i++){
+        for (i = 2; i < arrNumeros.length; i++){
             arrNumeros[i] = true;
         }
 
@@ -24,7 +29,8 @@ public class Lista01 {
             if (arrNumeros[i]){
                 j = i+1;
                 // O crivo define a raiz de N como o limite para procurarmos múltiplos
-                if (i >= lastCheck){
+                //*Existe diferença entre usar >= ou >?
+                if (i > lastCheck){
                     break;
                 } else {
                     // Percorremos o vetor eliminando todos os múltiplos possível do atual Nº primo
@@ -38,7 +44,7 @@ public class Lista01 {
             }
         }
         // Print
-        for (i = 0; i <= arrNumeros.length; i++ ){
+        for (i = 2; i < arrNumeros.length; i++ ){
             if (arrNumeros[i]){
                 System.out.println(i);
             }
@@ -54,53 +60,70 @@ public class Lista01 {
     Pesquise: métodos da classe Character que dizem se um char é letra ou dígito.
     Você vai precisar percorrer a String caractere por caractere — cuidado com o tamanho fixo esperado em cada posição.
      **/
-    public static void validadorPlacaCarro(){
-        String placa = "AAA-9999"; // AAA9A99
+    public static void validadorPlacaCarro(String placa){
+        // AAA9A99 - AAA-9999
         char[] arrPlaca = new char[8];
-        int digit = 0; 
-        int letter = 0; 
-        int hifen = 0;
-        // no formato Mercosul o último índice será null
-        if (placa.length() == 8){
-            // Formato Antigo
-            placa.getChars(0, placa.length(), arrPlaca,0);
-            for (char l: arrPlaca){
-                if (l == '-'){
-                    hifen += 1; 
-                } else if (Character.isDigit(l)) {
-                    digit += 1;
-                } else if (Character.isLetter(l)){
-                    letter += 1;
-                }
-            }
-            if (hifen == 1 && digit == 4  && letter == 3) {
-                System.out.println("Formato Válido!");
-            }
-        } else if (placa.length() == 7) {
-            // Formato Mercosul
-            placa.getChars(0,placa.length(), arrPlaca,0);
-            for (char l: arrPlaca){
-                if (l == '\u0000'){
-                    continue;
-                }
-                else if (Character.isDigit(l)){
-                    digit += 1;
-                } else if (Character.isLetter(l)){
-                    letter += 1;
-                }
-            }
-            if (digit == 3 && letter == 4){
-                System.out.println("Formato Válido!");
-            }
-        } else {
-            System.out.println("Formato Inválido");
-        }
+        char[] arrMercosul = {'A','A','A','9','A','9','9'};
+        //                     0 , 1 , 2 , 3 , 4 , 5 , 6,  7
+        char[] arrAntigo   = {'A','A','A','-','9','9','9','9'};
+        boolean isValid = true;
+        int i = 0;
 
+        if (placa.length() < 7){
+            isValid = false;
+        }
+        try {
+            placa.getChars(0, placa.length(), arrPlaca,0);
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("Tamanho de caracteres excedido! Tente novamente");
+        } catch (Exception e) {
+            System.out.println("Unexpected error! Try Again");
+        }
+        if (isValid){
+            if (arrPlaca[arrPlaca.length-1] == '\u0000') {
+                // Formato Mercosul
+                for (i = 0; i < arrMercosul.length - 1; i++) {
+                    if (Character.isAlphabetic(arrPlaca[i]) && Character.isAlphabetic(arrMercosul[i])
+                            || Character.isDigit(arrPlaca[i]) && Character.isDigit(arrMercosul[i])) {
+                        continue;
+                    } else {
+                        isValid = false;
+                        break;
+                    }
+                }
+            } else {
+                if (arrPlaca[3] != '-') {
+                    isValid = false;
+                } else {
+                    for (i = 0; i < arrPlaca.length; i++) {
+                        if (i == 3) {
+                            continue;
+                        } else if (Character.isAlphabetic(arrPlaca[i]) &&
+                                Character.isAlphabetic(arrAntigo[i]) ||
+                                Character.isDigit(arrPlaca[i]) &&
+                                        Character.isDigit(arrAntigo[i])) {
+                            continue;
+                        } else {
+                            isValid = false;
+                        }
+                    }
+                }
+            }
+        }
+        if (isValid){
+            System.out.println("Formato Válido!");
+        } else {
+            System.out.println("Formato Inválido!");
+        }
     }
 
+    //public static void
+
     public static void main (String[] args) {
+        Scanner input = new Scanner(System.in);
         crivoDeEratosthenes();
-        validadorPlacaCarro();
+        String placa = input.next();
+        validadorPlacaCarro(placa);
 
 //==== Exercício 3 ====
 //Caixa Eletrônico (Dispensador de Notas)

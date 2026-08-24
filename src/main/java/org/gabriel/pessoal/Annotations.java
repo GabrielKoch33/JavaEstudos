@@ -5,7 +5,8 @@ public class Annotations {
         System.out.println("Anotações");
     }
 }
-/* Como o Java funciona?
+/*
+Como o Java funciona?
 
 -> Java Application Programing Interface (API):
     Conjunto de bibliotecas Java embutidas que remove a necessidade de termos que escrever tudo do zero.
@@ -48,7 +49,7 @@ Edições Java:
 
 
 ==============================================================================
-                                    COMENTÁRIOS
+                                    COMENTÁRIOS JAVADOC
 ==============================================================================
 @author	    Nome do desenvolvedor
 @deprecated	Marca o método como deprecated. Algumas IDEs exibirão um alerta de compilação se o método for chamado.
