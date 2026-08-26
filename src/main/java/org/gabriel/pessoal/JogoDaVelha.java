@@ -13,6 +13,13 @@ public class JogoDaVelha {
  * Pesquise: como percorrer diagonais de uma matriz usando índices — repare no padrão entre matriz[i][i] e a diagonal secundária.
 **/
     public void verificaVencedor(){
+        char[][] matriz = new char[3][3];
+        // matriz = {{1,2,3},{4,5,6},{7,8,9}}
 
+        for (int linha = 0; linha < matriz.length; linha++){
+            for (int coluna = 0; coluna < matriz[linha].length; coluna++){
+                System.out.println(matriz[linha][coluna]);
+            }
+        }
     }
 }
