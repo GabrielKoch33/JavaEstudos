@@ -38,9 +38,11 @@ Edições Java:
 
 -> O nome da classe deve ser o mesmo que o nome do arquivo
     class NomeDoArquivo {...} = declaração de uma classe;
+    classes seguem PascalCase (primeira letra de cada palavra deve ser maiúscula!)
 
 -> Declaração da main:
     É obrigatória, qualquer projeto terá uma main() que será o ponto de partida do código.
+    métodos (assim como atributos e variáveis) devem ser camelCase (primeira letra inicial minúscula, demais iniciais maiúsculas!).
 
     public = visibilidade e acesso da classe, permitindo ser visivel a qualquer outra, é necessário ser public para a JVM ler
     static = permite executar a classe sem a necessidade de instanciar um objeto antes, ou seja, será única e tudo ocorre por meio dela;
