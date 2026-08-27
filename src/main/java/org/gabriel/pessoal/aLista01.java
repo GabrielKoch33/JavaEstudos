@@ -6,24 +6,32 @@ public class aLista01 {
 
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
+        Eratosthenes crivo = new Eratosthenes(); // Cria/instancia um objeto da classe
+        PlacaDeCarro placa = new PlacaDeCarro(); // Cria/instancia um objeto da classe
+        CaixaSaldoEletronico caixa = new CaixaSaldoEletronico(); // Cria/instancia um objeto da classe
+        JogoDaVelha vencedorJogoDaVelha = new JogoDaVelha();
+        CifraDeCesar codCifraCesar = new CifraDeCesar();
 
         System.out.println("Crivo de Eratosthenes: ");
-        Eratosthenes crivo = new Eratosthenes(); // Cria/instancia um objeto da classe
         crivo.crivoDeEratosthenes();             // Acessa o método a partir do objeto criado
 
         System.out.println("Insira a placaCarro de seu carro: ");
         String placaCarro = input.next();
-        PlacaDeCarro placa = new PlacaDeCarro(); // Cria/instancia um objeto da classe
         placa.validadorPlacaCarro(placaCarro);   // Acessa o método a partir do objeto criado
 
         System.out.println("Insira o valor da compra: ");
         int valor = input.nextInt();
-        CaixaSaldoEletronico caixa = new CaixaSaldoEletronico(); // Cria/instancia um objeto da classe
         caixa.caixaEletronico(valor);                            // Acessa o método a partir do objeto criado
 
+        System.out.println("[1] - Bolinhas | [2] - Xis");
+        System.out.println("Quem será que há vencedor?");
+        vencedorJogoDaVelha.verificaVencedor();
 
-
-
+        System.out.println("Digite a frase que você deseja codificar: ");
+        String frase = input.nextLine();
+        codCifraCesar.codificadorCesar(frase);
+    }
+}
 
 //==== Exercício 5 ====
 //Cifra de César
@@ -76,5 +84,3 @@ public class aLista01 {
 //Depois, teste com um array já ordenado e um array ordenado ao contrário — compare os números de trocas/comparações entre os dois casos.
 //
 //Pesquise: por que o Bubble Sort se comporta tão diferente em um array já ordenado vs. um totalmente invertido — isso tem a ver com a complexidade do algoritmo.
-    }
-}
