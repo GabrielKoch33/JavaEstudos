@@ -1,4 +1,4 @@
-package org.gabriel.pessoal;
+package org.gabriel.pessoal.lista01;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class aLista01 {
         Eratosthenes crivo = new Eratosthenes(); // Cria/instancia um objeto da classe
         PlacaDeCarro placa = new PlacaDeCarro(); // Cria/instancia um objeto da classe
         CaixaSaldoEletronico caixa = new CaixaSaldoEletronico(); // Cria/instancia um objeto da classe
-        JogoDaVelha vencedorJogoDaVelha = new JogoDaVelha();
+        MatrizMagica.JogoDaVelha vencedorJogoDaVelha = new MatrizMagica.JogoDaVelha();
         CifraDeCesar codCifraCesar = new CifraDeCesar();
 
         System.out.println("Crivo de Eratosthenes: ");
