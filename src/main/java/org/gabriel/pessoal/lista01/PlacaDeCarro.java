@@ -22,6 +22,7 @@ public class PlacaDeCarro {
             isValid = false;
         }
         try {
+            // arrPlaca = placa.toCharArray();
             placa.getChars(0, placa.length(), arrPlaca,0);
             // caso tenha mais caracteres que o permitido
         } catch (StringIndexOutOfBoundsException e) {

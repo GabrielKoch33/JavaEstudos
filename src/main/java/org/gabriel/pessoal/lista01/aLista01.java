@@ -17,7 +17,7 @@ public class aLista01 {
         crivo.crivoDeEratosthenes();             // Acessa o método a partir do objeto criado
 
         //==== Exercício 2 ====
-        System.out.println("Insira a placaCarro de seu carro: ");
+        System.out.println("Insira a placa de seu carro: ");
         String placaCarro = input.next();
         placa.validadorPlacaCarro(placaCarro);   // Acessa o método a partir do objeto criado
 
@@ -32,9 +32,13 @@ public class aLista01 {
         vencedorJogoDaVelha.verificaVencedor();
 
         //==== Exercício 5 ====
+        input.nextLine();
+
         System.out.println("Digite a frase que você deseja codificar: ");
         String frase = input.nextLine();
-        codCifraCesar.codificadorCesar(frase);
+        System.out.println("Digite o valor de deslocamento: ");
+        int numDesloca = input.nextInt();
+        codCifraCesar.codificadorCesar(frase, numDesloca);
 
         //==== Exercício 6 ====
         //==== Exercício 7 ====
