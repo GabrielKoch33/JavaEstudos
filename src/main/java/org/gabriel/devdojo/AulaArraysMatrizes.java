@@ -1,6 +1,6 @@
 package org.gabriel.devdojo;
 
-public class AulaArrays {
+public class AulaArraysMatrizes {
     public static void main(String[] args) {
         // Array != ArrayList
         // Arrays possuem tamanho fixo e tipo de valores únicos
@@ -59,6 +59,27 @@ public class AulaArrays {
         System.out.println(noChar[1]);    // para char, espaço em branco (' ');
         System.out.println(noBool[0]);    // para boolean, sempre false;
 
+
+        // Matrizes / Arrays Multidimensionais
+        int[][] arrMatriz = new int[3][3];
+
+        int[][] arrMatriz2 = new int[3][];
+
+        arrMatriz2[0] = new int[2];
+        arrMatriz2[1] = new int[4];
+        arrMatriz2[2] = new int[]{1,2,3,4,5};
+
+        for (int[] valores : arrMatriz2){
+            for (int num : valores){
+                continue;
+            }
+        }
+
+        for (int l = 0 ; l < arrMatriz.length ; l++){
+            for (int c = 0 ; c < arrMatriz[l].length ; c++){
+                arrMatriz[l][c] = 1;
+            }
+        }
     }
 
 }
