@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class aLista01 {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Eratosthenes crivo = new Eratosthenes(); // Cria/instancia um objeto da classe
         PlacaDeCarro placa = new PlacaDeCarro(); // Cria/instancia um objeto da classe

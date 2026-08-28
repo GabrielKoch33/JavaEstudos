@@ -11,8 +11,9 @@ public class CifraDeCesar {
      * Depois, escreva a lógica inversa: dado o texto cifrado e o deslocamento, decifre de volta ao original.
      * Pesquise: como converter um char para seu valor numérico (ASCII) e vice-versa,
      * e como o operador % resolve o problema de "dar a volta" no alfabeto sem usar if.
-     * */
-    public void codificadorCesar (String frase, int numDesloca) {
+     *
+     */
+    public void codificadorCesar(String frase, int numDesloca) {
         // Revisar melhores formas de escrever esse execício e torna-lo menos verboso
 
         char[] arrCharFrase = frase.toLowerCase().toCharArray();
@@ -21,30 +22,31 @@ public class CifraDeCesar {
         String pontuacoes = "!.,;:?'()[]{}--_/";
         String alfabeto = "abcdefghijklmnopqrstuvwxyz";
 
-        if (numDesloca == 0){
+        if (numDesloca == 0) {
             System.out.println(frase);
         } else {
-            for (int i = 0; i < arrCharFrase.length; i++){
+            for (int i = 0; i < arrCharFrase.length; i++) {
                 if (Character.isWhitespace(arrCharFrase[i]) ||
-                    pontuacoes.indexOf(arrCharFrase[i]) >= 0)
-                    {
-                        continue;
-                    }
-                if ((alfabeto.indexOf(arrCharFrase[i]) + 1) % arrCharFrase.length == 0 ||
-                    ((int) arrCharFrase[i] + numDesloca > 90))
-                    {
-                        arrFraseCodificada[i] = (char) (64 + numDesloca);
-                    }
-                else {
+                        pontuacoes.indexOf(arrCharFrase[i]) >= 0) {
+                    arrFraseCodificada[i] = arrCharFrase[i];
+                } else if (alfabeto.indexOf(arrCharFrase[i]) != 0 &&
+                        (alfabeto.indexOf(arrCharFrase[i]) + 1) % arrCharFrase.length == 0 ||
+                        ((int) arrCharFrase[i] + numDesloca > 90)) {
+                    arrFraseCodificada[i] = (char) (64 + numDesloca);
+                } else {
                     // bloco de transformação
-                    continue;
+                    int asciiCharNum = (int) arrCharFrase[i];
+                    asciiCharNum += numDesloca;
+                    arrFraseCodificada[i] = (char) asciiCharNum;
+                    /*
+                     * Não consegui fazer e me recuso a copiar da IA
+                     * arrFraseCodificada[i] = (char) (((arrCharFrase[i] - baseAscii + numDesloca) % 26) + baseAscii);
+                     * */
                 }
             }
-            for (char letra : arrFraseCodificada){
+            for (char letra : arrFraseCodificada) {
                 System.out.println(letra);
             }
         }
-
     }
-
 }
