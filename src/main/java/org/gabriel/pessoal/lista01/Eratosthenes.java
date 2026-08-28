@@ -1,13 +1,9 @@
 package org.gabriel.pessoal.lista01;
 
+import java.util.Scanner;
+
 public class Eratosthenes {
-    /**
-     * Gere, sem usar nenhuma biblioteca pronta de "é primo", todos os números primos entre 2 e 100 usando o algoritmo do Crivo de Eratosthenes:
-     * um array de boolean representando cada número, marcando como "não primo" os múltiplos de cada primo encontrado.
-     * Pesquise: por que esse algoritmo é mais eficiente do que testar divisibilidade número por número?
-     * Em que ponto você pode usar break para parar de marcar múltiplos mais cedo?
-     * Saída esperada: os primos impressos separados por vírgula.
-     **/
+
     public void crivoDeEratosthenes() {
         boolean[] arrNumeros = new boolean[101]; // 0 a 100;
         int lastCheck = (int) Math.sqrt(100);
@@ -44,5 +40,21 @@ public class Eratosthenes {
                 System.out.println(i);
             }
         }
+    }
+
+    /**
+     * Gere, sem usar nenhuma biblioteca pronta de "é primo", todos os números primos entre 2 e 100 usando o algoritmo do Crivo de Eratosthenes:<br><br>
+     * um array de boolean representando cada número, marcando como "não primo" os múltiplos de cada primo encontrado.<br><br>
+     * Pesquise: por que esse algoritmo é mais eficiente do que testar divisibilidade número por número?
+     * Em que ponto você pode usar break para parar de marcar múltiplos mais cedo?
+     * Saída esperada: os primos impressos separados por vírgula.
+     **/
+    public static void main(String[] args) {
+        //==== Exercício 1 ====
+        Scanner input = new Scanner(System.in);
+        Eratosthenes crivo = new Eratosthenes();
+
+        System.out.println("Crivo de Eratosthenes: ");
+        crivo.crivoDeEratosthenes();
     }
 }

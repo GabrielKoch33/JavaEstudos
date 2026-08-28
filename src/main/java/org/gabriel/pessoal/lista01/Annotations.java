@@ -45,7 +45,7 @@ Edições Java:
     métodos (assim como atributos e variáveis) devem ser camelCase (primeira letra inicial minúscula, demais iniciais maiúsculas!).
 
     public = visibilidade e acesso da classe, permitindo ser visivel a qualquer outra, é necessário ser public para a JVM ler
-    static = permite executar a classe sem a necessidade de instanciar um objeto antes, ou seja, será única e tudo ocorre por meio dela;
+    static = permite executar métodos a partir da classe, sem a necessidade de instanciar um objeto antes, ou seja, a classe será única e tudo ocorre por meio dela;
     void   = define valor de retorno da função, nesse caso void = sem retorno;
     main   = nome da função, é pela main() que o java encontra o ponto de partida do programa;
 

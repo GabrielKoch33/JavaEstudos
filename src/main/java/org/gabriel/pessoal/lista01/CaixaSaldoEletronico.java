@@ -1,13 +1,10 @@
 package org.gabriel.pessoal.lista01;
 
+import java.util.Scanner;
+
 public class CaixaSaldoEletronico {
-    /**
-     Dado um valor a sacar(ex: R$ 385) e um array com as notas disponíveis ({100, 50, 20, 10, 5, 2}).
-     Calcule a quantidade de cada nota usando o algoritmo guloso (sempre usa a maior nota possível primeiro).
-     Depois, teste com um valor que não é múltiplo de 2 (ex: R$ 387) e trate esse caso — o que deveria acontecer?
-     Pesquise: a diferença entre / e % para números inteiros em Java, e por que a ordem do array de notas (decrescente) importa tanto aqui.
-     */
-    public void caixaEletronico(int saque){
+
+    private void caixaEletronico(int saque){
         int[] arrNotas = {100,50,20,10,5,2};
         int valorAtual = saque;
         int i = 0;
@@ -30,5 +27,21 @@ public class CaixaSaldoEletronico {
         }
 
         System.out.println("Saque bem sucedido");
+    }
+
+    /**
+     Dado um valor a sacar(ex: R$ 385) e um array com as notas disponíveis ({100, 50, 20, 10, 5, 2}). <br><br>
+     Calcule a quantidade de cada nota usando o algoritmo guloso (sempre usa a maior nota possível primeiro).<br><br>
+     Depois, teste com um valor que não é múltiplo de 2 (ex: R$ 387) e trate esse caso — o que deveria acontecer?<br><br>
+     Pesquise: a diferença entre / e % para números inteiros em Java, e por que a ordem do array de notas (decrescente) importa tanto aqui.
+     */
+    public static void main(String[] args) {
+        //==== Exercício 3 ====
+        Scanner input = new Scanner(System.in);
+        CaixaSaldoEletronico caixa = new CaixaSaldoEletronico();
+
+        System.out.println("Insira o valor da compra: ");
+        int valor = input.nextInt();
+        caixa.caixaEletronico(valor); // Acessa o método a partir do objeto criado
     }
 }

@@ -1,15 +1,9 @@
 package org.gabriel.pessoal.lista01;
 
+import java.util.Scanner;
+
 public class PlacaDeCarro {
-    /**
-     * Validador de Placa de Carro
-     * Valide se uma String corresponde a um dos dois formatos de placa brasileira:
-     * - Formato antigo: AAA-9999 (3 letras, hífen, 4 dígitos)
-     * - Formato Mercosul: AAA9A99 (3 letras, 1 dígito, 1 letra, 2 dígitos)
-     * Teste com pelo menos 5 placas diferentes (algumas válidas, outras não) declaradas em um array de Strings, e imprima o resultado da validação de cada uma.
-     * Pesquise: métodos da classe Character que dizem se um char é letra ou dígito.
-     * Você vai precisar percorrer a String caractere por caractere — cuidado com o tamanho fixo esperado em cada posição.
-     **/
+
     public void validadorPlacaCarro(String placa) {
         char[] arrPlaca = new char[8];
         char[] arrMercosul = {'A', 'A', 'A', '9', 'A', '9', '9'};
@@ -71,5 +65,26 @@ public class PlacaDeCarro {
         } else {
             System.out.println("Formato Inválido!");
         }
+    }
+
+    /**
+     * Validador de Placa de Carro <br><br>
+     * Valide se uma String corresponde a um dos dois formatos de placa brasileira:<br>
+     * - Formato antigo: AAA-9999 (3 letras, hífen, 4 dígitos)<br>
+     * - Formato Mercosul: AAA9A99 (3 letras, 1 dígito, 1 letra, 2 dígitos)<br><br>
+     * Teste com pelo menos 5 placas diferentes (algumas válidas, outras não) declaradas em um array de Strings, e imprima o resultado da validação de cada uma.<br><br>
+     * Pesquise: métodos da classe Character que dizem se um char é letra ou dígito.<br><br>
+     * Você vai precisar percorrer a String caractere por caractere — cuidado com o tamanho fixo esperado em cada posição.
+     **/
+    public static void main(String[] args){
+        //==== Exercício 2 ====
+        Scanner input = new Scanner(System.in);
+        PlacaDeCarro placa = new PlacaDeCarro();
+
+        System.out.println("Insira a placa de seu carro: ");
+        String placaCarro = input.next();
+        placa.validadorPlacaCarro(placaCarro);
+        // Acessa o método a partir do objeto criado
+
     }
 }
