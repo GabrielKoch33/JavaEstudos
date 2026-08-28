@@ -69,7 +69,7 @@ public class AulaArraysMatrizes {
         arrMatriz2[1] = new int[4];
         arrMatriz2[2] = new int[]{1,2,3,4,5};
         int[][] arrInt = {{1,2},{1,2,3,4},{1}};
-        // int[][] arrInt = new int[3][]
+        int[][] arrInt2 = new int[3][];
 
         for (int[] valores : arrMatriz2){
             for (int num : valores){
