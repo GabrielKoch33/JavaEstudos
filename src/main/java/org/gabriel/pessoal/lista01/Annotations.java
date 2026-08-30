@@ -8,6 +8,11 @@ public class Annotations {
 /*
 Como o Java funciona?
 
+-> Java Developer Kit (JDK):
+    Pacote de ferramentas essencial para quem programa em Java, é nele quem contem o compilador,
+    ferramentas de apoio, depuradores, bibliotecas, ambiente de programação (JRE - Java Run-Time Environment)
+    e a JVM.
+
 -> Java Application Programing Interface (API):
     Conjunto de bibliotecas Java embutidas que remove a necessidade de termos que escrever tudo do zero.
     (ex: métodos http, conexões com banco, matemáticas, etc).
