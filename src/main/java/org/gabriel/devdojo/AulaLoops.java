@@ -22,7 +22,7 @@ public class AulaLoops {
 
         for (int x = 1 ; x < 1000000 ; x++){
             System.out.println("Incremento: " + x);
-            if (x == 3000) {
+            if (x == 1000) {
                 break;
             }
         }

@@ -19,12 +19,3 @@ public class AulaTiposVariaveis {
         String varText = "String não é tipo primitivo pois é uma classe!";
     }
 }
-//        System.out.println("Digite um número: ");
-//        int number = ler.nextInt();
-//        if (number < 10) {
-//        System.out.println("Number is lower than 10");
-//        } else if (number > 10) {
-//        System.out.println("Number is greater than 10");
-//        } else {
-//                System.out.println("Number is equal to 10");
-//        }
