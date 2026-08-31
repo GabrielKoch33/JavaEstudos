@@ -1,4 +1,4 @@
-package org.gabriel.pessoal.lista01;
+package org.gabriel.devdojo;
 
 public class Annotations {
     public static void main(String[] args){
