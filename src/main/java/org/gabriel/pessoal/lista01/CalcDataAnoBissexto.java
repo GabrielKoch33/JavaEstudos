@@ -27,9 +27,6 @@ public class CalcDataAnoBissexto {
             // 2026 % 4 == 2
         }
     }
-
-
-
     /**
     * Ano Bissexto e Diferença de Dias <br>
     * Sem usar nenhuma classe de data (LocalDate, Calendar, etc. — isso vem bem mais na frente do curso):<br><br>
@@ -40,23 +37,31 @@ public class CalcDataAnoBissexto {
     public static void main(String[] args) {
         //==== Exercício 9 ====
         int[] meses = {31,28,31,30,31,30,31,31,30,31,30,31};
+        int totalDiaPassados = 0;
+        int i = 0;
         Scanner input = new Scanner(System.in);
+
         System.out.println("Informe um ano: ");
         int ano = input.nextInt();
-        System.out.println("Informe um mês (o número, não o nome)");
+        System.out.println("Informe um mês (o número, não o nome): ");
         int mes = input.nextInt();
-        System.out.println("");
+        System.out.println("Informe um dia: ");
         int dia = input.nextInt();
+
+        mes--; // Para ir de acordo com os índices do array, caso o user informe Janeiro (01), decrementamos 1 para ir para o índice zero
         if (eBissexto(ano)){
             meses[1] += 1;
-            mes--; // Para ir de acordo com os índices do array, caso o user informe Janeiro (01), decrementamos 1 para ir para o índice zero
-
             while (i < mes ){
-                totalDiaPassados
+                totalDiaPassados += meses[i];
+                i++;
             }
         } else {
-
+            while (i < mes ){
+                totalDiaPassados += meses[i];
+                i++;
+            }
         }
-
+        totalDiaPassados += dia - 1;
+        System.out.println("Se passaram no total, desde o dia 1º de Janeiro, " + totalDiaPassados + " dias!");
     }
 }
