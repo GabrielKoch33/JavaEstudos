@@ -66,4 +66,27 @@ Edições Java:
 @see	    Documenta uma associação a outro método ou classe.
 @since	    Documenta quando o método foi adicionado a classe.
 @throws	    Documenta uma exceção lançada por um método. É um sinônimo para a @exception introduzida no Javadoc 1.2.
+
+==============================================================================
+                                    MÉTODOS CLASSES
+==============================================================================
+
+    private void metodoPrivado(){
+        System.out.println("Sou um método PRIVADO e somente sou acessível dentro dessa classe, fora dela não é possível me chamar");
+    }
+
+    public void metodoPublico(){
+        System.out.println("Sou um método PÚBLICO e sou acessível dentro dessa classe, fora dela, dentro de outros 'packages' e subclasses." +
+                "Podem me chamar de qualquer lugar!");
+    }
+
+    protected void metodoProtegido(){
+        System.out.println("Sou um método PROTEGIDO e somente sou acessível dentro dessa classe, das classes de mesmo 'package' e subclasses herdadas." +
+                "Fora desse pacote não é possível me chamar a não ser que seja em uma classe filha!");
+    }
+
+    void metodoDefault(){
+        System.out.println("Sou um método DEFAULT e somente sou acessível dentro dessa classe e dentro de classe de mesmo pacote. Qualquer acesso fora de" +
+                "/classes  gerará erro de compilação e acesso!");
+    }
 */
