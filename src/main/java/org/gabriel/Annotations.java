@@ -1,4 +1,4 @@
-package org.gabriel.devdojo;
+package org.gabriel;
 
 public class Annotations {
     public static void main(String[] args){

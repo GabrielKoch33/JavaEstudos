@@ -1,4 +1,4 @@
-package org.gabriel.devdojo;
+package org.gabriel.devdojo.sintaxejava;
 import java.util.Scanner;
 
 public class AulaTiposVariaveis {

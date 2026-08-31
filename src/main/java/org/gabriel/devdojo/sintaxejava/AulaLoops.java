@@ -1,4 +1,4 @@
-package org.gabriel.devdojo;
+package org.gabriel.devdojo.sintaxejava;
 
 public class AulaLoops {
     public static void main(String[] args) {
