@@ -50,6 +50,10 @@ public class CalcDataAnoBissexto {
         if (eBissexto(ano)){
             meses[1] += 1;
             mes--; // Para ir de acordo com os índices do array, caso o user informe Janeiro (01), decrementamos 1 para ir para o índice zero
+
+            while (i < mes ){
+                totalDiaPassados
+            }
         } else {
 
         }
