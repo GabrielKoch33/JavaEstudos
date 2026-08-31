@@ -19,13 +19,13 @@ public class CompressaoRLE {
                     contCharAtual++;
                     j++;
                 } else {
-                    //valueOf converte num -> str
-                    fraseCodificada += charAtual + String.valueOf(contCharAtual);
                     break;
                     /*StringBuilder nos ajudaria a evitar criar cópias da frase na memória
                     * Ele funcionaria como uma única variável de tamanho flexível (ArrayList)*/
                 }
             }
+            //valueOf converte num -> str
+            fraseCodificada += charAtual + String.valueOf(contCharAtual);
             i = j + 1;
         }
         return fraseCodificada;
