@@ -55,11 +55,13 @@ public class CalcDataAnoBissexto {
                 totalDiaPassados += meses[i];
                 i++;
             }
+            System.out.println("É um ano bissexto!");
         } else {
             while (i < mes ){
                 totalDiaPassados += meses[i];
                 i++;
             }
+            System.out.println("Não é um ano bissexto!");
         }
         totalDiaPassados += dia - 1;
         System.out.println("Se passaram no total, desde o dia 1º de Janeiro, " + totalDiaPassados + " dias!");
