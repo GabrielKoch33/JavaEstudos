@@ -26,13 +26,14 @@ public class BubbleSort {
                     contSwaps++;
                 }
                 contComparacoes++;
-                if (contSwaps == 0){ break;}
             }
+            if (contSwaps == 0){ break;}
         }
         for (int num : arrOrdenado) {
             System.out.println(num);
         }
         System.out.println("Trocas: " + contSwaps + " Comparações: " + contComparacoes);
+        contSwaps = contComparacoes = 0;
         System.out.println("-------------------------------");
 
         for (int i = 0; i < arrDesordenado.length-1; i++){
@@ -45,6 +46,7 @@ public class BubbleSort {
                 }
                 contComparacoes++;
             }
+            if (contSwaps == 0){ break;}
         }
         for (int num : arrDesordenado){
             System.out.println(num);
