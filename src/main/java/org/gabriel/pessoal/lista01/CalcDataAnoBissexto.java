@@ -48,20 +48,14 @@ public class CalcDataAnoBissexto {
         System.out.println("Informe um dia: ");
         int dia = input.nextInt();
 
-        mes--; // Para ir de acordo com os índices do array, caso o user informe Janeiro (01), decrementamos 1 para ir para o índice zero
+        mes--; // Para ir conforme os índices do array, caso o user informe Janeiro (01), decrementamos 1 para ir para o índice zero
         if (eBissexto(ano)){
-            meses[1] += 1;
-            while (i < mes ){
-                totalDiaPassados += meses[i];
-                i++;
-            }
             System.out.println("É um ano bissexto!");
-        } else {
-            while (i < mes ){
-                totalDiaPassados += meses[i];
-                i++;
-            }
-            System.out.println("Não é um ano bissexto!");
+            meses[1] += 1;
+        }
+        while (i < mes ) {
+            totalDiaPassados += meses[i];
+            i++;
         }
         totalDiaPassados += dia - 1;
         System.out.println("Se passaram no total, desde o dia 1º de Janeiro, " + totalDiaPassados + " dias!");
