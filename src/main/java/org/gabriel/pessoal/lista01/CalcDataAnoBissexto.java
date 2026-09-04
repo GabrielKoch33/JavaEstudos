@@ -4,18 +4,9 @@ import java.util.Scanner;
 
 public class CalcDataAnoBissexto {
 
-    private static int dezena (int num){
-        return ((num/10) % 10) * 10;
-    }
-
-    private static int unidade (int num){
-        return num % 10;
-    }
-
     private static boolean eBissexto(int ano){
-        int u = unidade(ano);
-        int d = dezena(ano);
-        int lastTwoDigits = d + u;
+
+        int lastTwoDigits = ano % 100;
 
         if (lastTwoDigits == 0) {
             return ano % 400 == 0;
