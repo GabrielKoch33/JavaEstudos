@@ -1,10 +1,14 @@
 package org.gabriel.devdojo.poo.classes;
 
 public class Estudante {
-    public String nome;
-    public int idade;
-    public char sexo;
+    public String nome = null;
+    public int idade = 0;
+    public char sexo = ' ';
 
+    /* Tópicos praticados nesse arquivo:
+    * - this
+    * - varargs
+    * */
     public void imprime(){
         System.out.println("-----------------------------");
         System.out.println(this.nome);
@@ -15,5 +19,11 @@ public class Estudante {
         // O valor do atributo é referente ao objeto que chamou o método
         // objetos diferentes com dados diferentes armazenados ao chamar o mesmo atributo (this.nome) retornarão valores
         // diferentes
+    }
+
+    public void imprimeMaterias(String... materias){
+        for (String mat : materias) {
+            System.out.println(mat);
+        }
     }
 }
