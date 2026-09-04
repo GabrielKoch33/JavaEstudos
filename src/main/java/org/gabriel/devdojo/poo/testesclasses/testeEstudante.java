@@ -15,5 +15,9 @@ public class testeEstudante {
         System.out.println(estudante.sexo);
         System.out.println(estudante);
 
+        // Goku sobreescreveu Gabriel
+        estudante.nome = "Goku";
+        System.out.println(estudante.nome);
+
     }
 }
