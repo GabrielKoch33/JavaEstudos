@@ -16,6 +16,12 @@ public class Pessoa {
      * Baixa Coesão = ruim<br><br>
      * Alta Coesão = bom
      * */
+    public void imprimeDados(){
+        System.out.println(this.nome);
+        System.out.println(getNome());
+        // Prefira sempre utilizar, dentro da propria classe, o 'this' ao invés de 'get()'
+
+    }
 
     public void setNome(String nome){
         this.nome = nome;
