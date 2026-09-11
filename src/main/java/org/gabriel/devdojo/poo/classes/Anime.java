@@ -8,13 +8,14 @@ public class Anime {
     private String tipo;
     private int episodios;
     private int idadeIndicativa;
-    private int[] temporadas; // Um array NÃO INICIALIZADO
-    {
+    private static int[] temporadas; // Um array NÃO INICIALIZADO
+
+    static {
         System.out.println("BLOCO DE INICIALIZAÇÃO");
         System.out.println("RODA SEMPRE QUE CRIADO UM OBJETO, ANTES MESMO DO CONSTRUTOR");
-        temporadas = new int[100];
-        for (int i = 0; i < temporadas.length; i++){
-            temporadas[i] = i+1;
+        Anime.temporadas = new int[100];
+        for (int i = 0; i < Anime.temporadas.length; i++){
+            Anime.temporadas[i] = i+1;
         }
         System.out.println("FINALIZAMOS A CRIAÇÃO DA LISTA, ISSO VAI SER FEITO EM TODOS OS OBJETOS");
     }

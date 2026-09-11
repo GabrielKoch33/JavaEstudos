@@ -4,6 +4,9 @@ import org.gabriel.devdojo.poo.classes.CarroStatic;
 
 public class testeCarroStatic {
     public static void main(String[] args) {
+
+        CarroStatic.setVelocidadeLimite(150);
+
         CarroStatic c1 = new CarroStatic("FERRARI", 270);
         CarroStatic c2 = new CarroStatic("BMW", 189);
         CarroStatic c3 = new CarroStatic("BUGGATI", 300);

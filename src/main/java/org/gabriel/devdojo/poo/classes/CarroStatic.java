@@ -5,15 +5,19 @@ public class CarroStatic {
     private double velocidadeMax;
     private static double velocidadeLimite = 250;
     public static int maxPessoas = 4;
+
     /**
      * A declaração de static serve para definir atributos defaults e gerais para TODOS os objetos gerados a partir dessa classe.
      * Como esse atributo é inerente da CLASSE e NÃO da INSTÂNCIA DE UM OBJETO, o mesmo não pode ser acessado usando this.atributo
      * static define um valor padrão para a classe e suas filhas. 'final' impede que alteremos o valor de uma variavel
      * */
-
     public CarroStatic(String marca, double velocidadeMax) {
         this.marca = marca;
         this.velocidadeMax = velocidadeMax;
+    }
+
+    public static void setVelocidadeLimite(double velLimite) {
+        CarroStatic.velocidadeLimite = velLimite;
     }
 
     public void imprime() {
@@ -43,9 +47,5 @@ public class CarroStatic {
 
     public double getVelocidadeLimite() {
         return velocidadeLimite;
-    }
-
-    public void setVelocidadeLimite(double velLimite) {
-        velocidadeLimite = velLimite;
     }
 }
