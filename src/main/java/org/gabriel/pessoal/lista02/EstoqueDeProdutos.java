@@ -63,7 +63,7 @@ public class EstoqueDeProdutos {
         Produto banana = new Produto("banana", 12.3, 7);
         Produto pera = new Produto("pera", 34, 3);
         Produto uva = new Produto("uva", 14, 2);
-        Produto pessego = new Produto("pessego", 8, 3);
+        Produto pessego = new Produto("pêssego", 8, 3);
 
         EstoqueDeProdutos estoqueMercado = new EstoqueDeProdutos();
         estoqueMercado.removeProduto(pessego);
