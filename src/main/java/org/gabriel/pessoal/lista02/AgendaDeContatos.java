@@ -15,4 +15,5 @@ package org.gabriel.pessoal.lista02;
  * trata literais de {@code String} internamente.
  */
 public class AgendaDeContatos {
+
 }

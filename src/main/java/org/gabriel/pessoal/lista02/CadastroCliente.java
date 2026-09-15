@@ -1,5 +1,9 @@
 package org.gabriel.pessoal.lista02;
 
+import org.gabriel.pessoal.lista02.classesExtras.Cliente;
+
+import java.util.Scanner;
+
 /**
  * Exercício 04 — Leitura de Dados pelo Console: Cadastro de Cliente.
  * <p>
@@ -15,6 +19,39 @@ package org.gabriel.pessoal.lista02;
 public class CadastroCliente {
 
     public static void main(String[] args) {
-        // Implemente aqui.
+        Scanner ler = new Scanner(System.in);
+        String nome, email;
+        int idade;
+
+        // Lógica na main: Válida as entradas e só então cria o objeto.
+        while (true) {
+            System.out.println("Seu nome: ");
+            nome = ler.nextLine();
+            System.out.println("Sua idade: ");
+            idade = ler.nextInt();
+            if (idade < 0) {
+                System.out.println("Idade Inválida, tente novamente!");
+                continue;
+            }
+            ler.nextLine();
+            System.out.println("Seu email");
+            email = ler.nextLine();
+            Cliente cli1 = new Cliente(nome,idade,email);
+            cli1.imprime();
+            break;
+        }
+
+        // Lógica no construtor: cria um objeto, se as entradas forem inválidas teremos um objeto
+        // com atributos vazios, porém ainda temos o objeto.
+
+        System.out.println("Seu nome: ");
+        nome = ler.nextLine();
+        System.out.println("Sua idade: ");
+        idade = ler.nextInt();
+        ler.nextLine();
+        System.out.println("Seu email");
+        email = ler.nextLine();
+        Cliente cli2 = new Cliente(nome,idade,email);
+        cli2.imprime();
     }
 }
