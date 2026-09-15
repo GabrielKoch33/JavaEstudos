@@ -1,5 +1,7 @@
 package org.gabriel.pessoal.lista02;
 
+import org.gabriel.pessoal.lista02.classesExtras.Retangulo;
+
 /**
  * Exercício 06 — Sobrecarga de Construtores: Retângulo.
  * <p>
@@ -12,9 +14,10 @@ package org.gabriel.pessoal.lista02;
  * chamar o outro é melhor do que simplesmente repetir as atribuições nos
  * dois construtores.
  */
-public class Retangulo {
+public class FormaGeometrica {
 
     public static void main(String[] args) {
-        // Implemente aqui.
+        Retangulo retangulo = new Retangulo(4,8);
+        Retangulo quadrado = new Retangulo(7);
     }
 }

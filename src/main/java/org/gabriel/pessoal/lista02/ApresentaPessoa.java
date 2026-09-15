@@ -1,5 +1,7 @@
 package org.gabriel.pessoal.lista02;
 
+import org.gabriel.pessoal.lista02.classesExtras.Pessoa;
+
 /**
  * Exercício 08 — {@code this} Explícito: Pessoa.
  * <p>
@@ -15,9 +17,12 @@ package org.gabriel.pessoal.lista02;
  * construtor, {@code nome = nome} simplesmente não funcionaria (o que o
  * Java entenderia ali)?
  */
-public class Pessoa {
+public class ApresentaPessoa {
 
     public static void main(String[] args) {
-        // Implemente aqui.
+        Pessoa pessoa = new Pessoa("Ana", 45);
+        pessoa.apresentar();
+        // Método pessoa chama apresentar, apresentar sabe qual objeto/instância chamou ele
+        // passa essa referência como argumento para imprimirDetalhes
     }
 }

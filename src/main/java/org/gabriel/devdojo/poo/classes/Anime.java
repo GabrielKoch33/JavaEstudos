@@ -23,6 +23,7 @@ public class Anime {
     // CONSTRUTOR ANTIGO
     public Anime(String nome, String tipo, int episodios) {
         this();
+        // this() chama outro construtor, podemos definir qual pela quantidade de argumentos
         System.out.println("Acessado pelo construtor novo");
         this.nome = nome;
         this.tipo = tipo;
