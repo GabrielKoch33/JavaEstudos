@@ -3,7 +3,7 @@ package org.gabriel.devdojo.poo.classes.associacao.exerciciosAssociacao;
 public class Aluno {
     private String nome;
     private int idade;
-    private Seminario seminario; //*//
+    private Seminario seminario;
 
     public Aluno(String nome, int idade) {
         this.nome = nome;

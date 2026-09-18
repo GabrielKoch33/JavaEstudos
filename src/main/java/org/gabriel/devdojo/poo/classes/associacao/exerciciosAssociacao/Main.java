@@ -25,6 +25,5 @@ public class Main {
         professor2.setSeminariosMinistrados(seminario2);
         gabriel.setSeminario(seminario2);
         gabriel.setSeminario(seminario2);
-
     }
 }

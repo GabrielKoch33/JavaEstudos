@@ -37,11 +37,11 @@ public class Seminario {
         this.participantes = participantes;
     }
 
-    public String getLocal() {
+    public Local getLocal() {
         return local;
     }
 
-    public void setLocal(String local) {
+    public void setLocal(Local local) {
         this.local = local;
     }
 }
