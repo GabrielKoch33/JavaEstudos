@@ -1,10 +1,15 @@
 package org.gabriel.devdojo.poo.classes.heranca;
 
 public class Pessoa {
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
+    protected String nome;
+    protected String cpf;
+    protected Endereco endereco;
+    // protected fornece acesso aos atributos/métodos para qualquer classe no pacote e classes herdeiras, indenpendente do pacote que elas estiverem
 
+    public Pessoa(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
 
     public void imprimir(){
         System.out.println(this.nome);
