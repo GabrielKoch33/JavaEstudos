@@ -1,27 +1,23 @@
 package org.gabriel.pessoal.ecommerce;
 
-public class Cliente {
+public class Usuario {
     private String nome;
     private String cpf;
-    private int telefone;
+    private String telefone;
     private Carrinho carrinho;
 
-    public Cliente(int telefone, String nome, String cpf) {
-        this(nome, cpf);
+    public Usuario(String nome, String cpf, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
         this.telefone = telefone;
     }
 
-    public Cliente (String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
-
-    public void adicionaCarrinho(Produto produto) {
-        if (this.carrinho == null) {
-            this.carrinho = new Carrinho();
-        }
-        this.carrinho.adicionaAoCarrinho(produto);
-    }
+//    public void adicionaCarrinho(Produto produto) {
+//        if (this.carrinho == null) {
+//            this.carrinho = new Carrinho();
+//        }
+//        this.carrinho.adicionaAoCarrinho();
+//    }
 
     public String getNome() {
         return nome;
@@ -39,11 +35,11 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

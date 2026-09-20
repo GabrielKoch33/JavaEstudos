@@ -10,11 +10,7 @@ public class Carrinho {
         carrinho = new ArrayList<>();
     }
 
-    public void adicionaAoCarrinho(ItemPedido ItemProduto) {
-        this.carrinho.add(ItemProduto);
-    }
-
-    public boolean removerDoCarrinho(ItemPedido ItemProduto) {
-        return this.carrinho.remove(ItemProduto);
+    public List<ItemPedido> getCarrinho() {
+        return carrinho;
     }
 }

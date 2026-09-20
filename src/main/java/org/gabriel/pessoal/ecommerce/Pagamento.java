@@ -2,7 +2,7 @@ package org.gabriel.pessoal.ecommerce;
 
 public class Pagamento {
     private String instituicao;
-    private Cliente titular;
+    private Usuario titular;
     private double saldoConta;
     private double limiteCartao;
     private FormasDePagamento formasDePagamento;
