@@ -1,20 +1,28 @@
 package org.gabriel.pessoal.ecommerce;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
     private List<ItemPedido> pedido;
     private double valorFinal;
+    {
+        pedido = new ArrayList<>();
+    }
 
-    public void verPedido() {
-        int i = 1;
-        if (this.pedido == null) {
-            System.out.println("Não é possível fazer um pedido sem produtos, selecione ao menos um item e inicialize a finalização da compra");
-            return;
-        }
+    public Pedido(ItemPedido itemPedido) {
+        this.pedido.add(itemPedido);
         for (ItemPedido item : pedido) {
-            System.out.println("ID" + i + "| PROD. NOME" + item.getProduto().getNome() + "| QTD"+item.getQuantidade());
-            i++;
+            this.valorFinal += item.getValorItem();
         }
     }
+
+    public List<ItemPedido> getPedido() {
+        return pedido;
+    }
+
+    public double getValorFinal() {
+        return valorFinal;
+    }
 }
+

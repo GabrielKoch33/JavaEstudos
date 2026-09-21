@@ -13,4 +13,12 @@ public class Carrinho {
     public List<ItemPedido> getCarrinho() {
         return carrinho;
     }
+
+    public boolean isEmpty() {
+        return carrinho.isEmpty();
+    }
+
+    public void adicionaItemCarrinho(ItemPedido itemPedido) {
+        this.carrinho.add(itemPedido);
+    }
 }

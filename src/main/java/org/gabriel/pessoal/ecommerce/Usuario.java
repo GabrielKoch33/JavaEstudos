@@ -4,6 +4,7 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String telefone;
+    private ContaBancaria contaBancaria;
     private Carrinho carrinho;
 
     public Usuario(String nome, String cpf, String telefone) {
@@ -12,12 +13,13 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-//    public void adicionaCarrinho(Produto produto) {
-//        if (this.carrinho == null) {
-//            this.carrinho = new Carrinho();
-//        }
-//        this.carrinho.adicionaAoCarrinho();
-//    }
+    public void setContaBancaria(ContaBancaria contaBancaria) {
+        this.contaBancaria = contaBancaria;
+    }
+
+    public ContaBancaria getContaBancaria() {
+        return contaBancaria;
+    }
 
     public String getNome() {
         return nome;

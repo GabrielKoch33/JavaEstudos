@@ -1,8 +1,19 @@
 package org.gabriel.pessoal.ecommerce;
 
 public class FinalizarCompra {
-    private Pedido itens;
-    private Pagamento pagamento;
+    private Pedido pedido;
+    private Usuario usuario;
 
-    //remover estoque e diminuir saldo cliente
+    public boolean permiteComprar(Pedido pedido, ContaBancaria contaBancaria) {
+       return pedido.getValorFinal() < contaBancaria.getSaldoConta();
+    }
+
+    public boolean finaliza(Pedido pedido, Usuario usuario) {
+        ContaBancaria contaUser = usuario.getContaBancaria();
+        if (permiteComprar(pedido, contaUser)) {
+            contaUser.descontaSaldo(pedido.getValorFinal());
+            return true;
+        }
+        return false;
+    }
 }
