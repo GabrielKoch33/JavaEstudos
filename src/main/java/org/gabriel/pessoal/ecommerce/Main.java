@@ -10,7 +10,7 @@ public class Main {
         for (int i = 0; i < listaProdutos.size(); i++) {
             Produto produto = listaProdutos.get(i);
             int quantidade = exibirEstoque.get(produto);
-            System.out.println("ID:"+(i+1)+"Produto: "+produto.getNome()+" quantidade: "+quantidade);
+            System.out.println("ID: "+(i+1)+"| Produto: "+produto.getNome()+"| Quantidade: "+quantidade);
         }
         return listaProdutos;
     }
@@ -56,19 +56,23 @@ public class Main {
             System.out.println("[4] - Comprar/Adicionar Carrinho");
             System.out.println("[5] - Finalizar Carrinho ");
             System.out.println("=".repeat(30));
-
+            System.out.print("R: ");
             int escolha = Math.abs(input.nextInt());
 
             switch (escolha) {
                 case 1 -> {
+                    input.nextLine();
                     System.out.println("Informe o nome do produto: ");
                     String nomeProd = input.nextLine();
                     System.out.println("Informe uma descrição: ");
                     String descProd = input.nextLine();
                     System.out.println("Informe uma categoria: ");
                     String catProd = input.nextLine();
+                    System.out.println("Informe o preço desse produto:");
                     double precoUnit = input.nextDouble();
+                    System.out.println("Informe a quantidade em estoque para esse produto: ");
                     int quantidadeDisponivel = input.nextInt();
+                    System.out.println("Protudo cadastrado com sucesso!");
                     estoque.adicionarProdutoEstoque(new Produto(nomeProd, descProd, catProd, precoUnit),quantidadeDisponivel);
                 }
                 case 2 -> {
@@ -107,7 +111,7 @@ public class Main {
                             System.out.println("Não temos essa quantidade disponível para este item!");
                         } else {
                             System.out.println(usuario.getNome()+" comprou "+quantidadeComprar+" de:"+produto.getNome());
-                            System.out.println("Deseja adicionar esse item ao carrinho e continuar comprando ou deseja sair para finalizar seu pedido?\n[1] Continuar\n[2]Sair");
+                            System.out.println("Deseja adicionar esse item ao carrinho e continuar comprando ou deseja sair para finalizar seu pedido?\n[1] Continuar\n[2] Sair");
                             opcao = 0;
                             while (opcao != 1 && opcao != 2) {
                                 opcao = input.nextInt();
