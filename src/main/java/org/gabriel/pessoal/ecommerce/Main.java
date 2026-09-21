@@ -120,6 +120,7 @@ public class Main {
                             switch (opcao) {
                                 case 1 -> {
                                     carrinho.adicionaItemCarrinho(itemPedido);
+                                    System.out.println("Item adiciona ao carrinho!\nLembre-se: Use a opção [5] para que os itens do seu Carrinho sejam efetivamente comprados!");
                                 }
                                 case 2 -> {
                                     Pedido pedido = new Pedido(itemPedido);
