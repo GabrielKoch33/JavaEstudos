@@ -11,23 +11,20 @@ public class ContaBancaria {
 
     @Override
     public String toString() {
-        return " "+instituicao+" | "+saldoConta;
+        return " | Instituição: "+instituicao+" | Saldo: "+saldoConta;
     }
 
-    public boolean podeDescontar(double valor) {
+    public boolean podeComprar(double valor) {
         return valor >= 0 && valor <= this.saldoConta;
     }
 
-    public boolean descontaSaldo(double valor) {
-        if (!podeDescontar(valor)) {
-            return false;
-        }
+    public void descontaSaldo(double valor) {
         this.saldoConta -= valor;
-        return true;
     }
 
+    //Getters && Setters Padrões//
     public String getInstituicao() {
-        return instituicao;
+        return this.instituicao;
     }
 
     public void setInstituicao(String instituicao) {
@@ -35,7 +32,7 @@ public class ContaBancaria {
     }
 
     public double getSaldoConta() {
-        return saldoConta;
+        return this.saldoConta;
     }
 
     public void setSaldoConta(double saldoConta) {

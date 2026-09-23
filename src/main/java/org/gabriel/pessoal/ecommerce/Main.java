@@ -5,21 +5,19 @@ import org.gabriel.pessoal.ecommerce.*;
 
 public class Main {
 
-    static public List<Produto> exibirProdutos(Estoque estoque) {
-        Map<Produto,Integer> exibirEstoque = estoque.getEstoque();
-        List<Produto> listaProdutos = new ArrayList<>(exibirEstoque.keySet());
+    static public List<Produto> exibirProdutos(Map<Produto,Integer> estoque) {
+        List<Produto> listaProdutos = new ArrayList<>(estoque.keySet());
         int i = 0;
-        for (Produto prod : exibirEstoque.keySet()) {
-            System.out.println("ID: "+(i+1)+" | "+estoque.toString(prod));
+        for (Produto prod : estoque.keySet()) {
+            System.out.println("ID: "+(i+1)+" | "+prod.toString()+" | Quantidade: "+estoque.get(prod));
             i++;
         }
         return listaProdutos;
     }
 
-    static public int exibirCarrinho(Carrinho carrinho) {
-        List<ItemPedido> exibirCarrinho = carrinho.getCarrinho();
+    static public int exibirCarrinho(List<ItemPedido> carrinho) {
         int i = 0;
-        for (ItemPedido item : exibirCarrinho) {
+        for (ItemPedido item : carrinho) {
             System.out.println("ID:"+(i+1)+" | "+item.toString());
             i++;
         }
@@ -76,21 +74,21 @@ public class Main {
                     if (estoque.isEmpty()) {
                         System.out.println("Estoque vazio!");
                     } else {
-                        Main.exibirProdutos(estoque);
+                        Main.exibirProdutos(estoque.getEstoque());
                     }
                 }
                 case 3 -> {
                     if (usuario.getCarrinho().isEmpty()) {
                         System.out.println("Carrinho vazio!");
                     } else {
-                        Main.exibirCarrinho(carrinho);
+                        Main.exibirCarrinho(usuario.getCarrinho());
                     }
                 }
                 case 4 -> {
                     if (estoque.isEmpty()) {
                         System.out.println("Estoque vazio!");
                     } else {
-                        List<Produto> listaEstoque = Main.exibirProdutos(estoque);
+                        List<Produto> listaEstoque = Main.exibirProdutos(estoque.getEstoque());
                         int sizeEstoque = listaEstoque.size();
                         int opcao;
                         while (true) {
@@ -113,20 +111,20 @@ public class Main {
                             while (opcao != 1 && opcao != 2) {
                                 opcao = input.nextInt();
                             }
-                            ItemPedido itemPedido = new ItemPedido(produto,quantidadeComprar);
+                            ItemPedido itemPedido = new ItemPedido(produto, quantidadeComprar);
                             switch (opcao) {
                                 case 1 -> {
-                                    carrinho.adicionaItemCarrinho(itemPedido);
+                                    usuario.adicionarAoCarrinho(itemPedido);
                                     estoque.decresceQtdOuRemoveItem(produto, quantidadeComprar);
-                                    System.out.println("Item adiciona ao carrinho!\nLembre-se: Use a opção [5] para que os itens do seu Carrinho sejam efetivamente comprados!");
+                                    System.out.println("Item adicionado ao carrinho!\nLembre-se: Use a opção [5] para que os itens do seu Carrinho sejam efetivamente comprados!");
                                 }
                                 case 2 -> {
                                     Pedido pedido = new Pedido(itemPedido);
-                                    FinalizarCompra finalizarCompra = new FinalizarCompra();
-                                    if (finalizarCompra.finaliza(pedido, usuario)) {
+                                    if (usuario.temDinheiro(pedido.getValorFinal())) {
+                                        FinalizarCompra.finaliza(pedido,usuario);
                                         System.out.println("Pedido finalizado com sucesso!");
                                         if (estoque.decresceQtdOuRemoveItem(produto, quantidadeComprar)) {
-                                            System.out.println("Acabaram as unidades desse produto! Volte mais tarde");
+                                            System.out.println("Acabaram as unidades desse produto! Volte mais tarde caso deseje mais do mesmo!");
                                             break;
                                         }
                                         System.out.println("**!Estoque atualizado!**");
@@ -139,10 +137,10 @@ public class Main {
                     }
                 }
                 case 5 -> {
-                    if (carrinho.isEmpty()) {
+                    if (usuario.carrinhoTemItens()) {
                         System.out.println("Carrinho vazio, nada para finalizar!");
                     } else {
-                        Main.exibirCarrinho(carrinho);
+                        Main.exibirCarrinho(usuario.getCarrinho());
                     }
                 }
             }

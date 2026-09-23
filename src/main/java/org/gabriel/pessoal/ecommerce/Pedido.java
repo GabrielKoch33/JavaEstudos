@@ -7,22 +7,32 @@ public class Pedido {
     private List<ItemPedido> pedidos;
     private double valorFinal;
     {
-        pedidos = new ArrayList<>();
+        this.pedidos = new ArrayList<>();
     }
 
-    public Pedido(ItemPedido itemPedido) {
-        this.pedidos.add(itemPedido);
-        for (ItemPedido item : pedidos) {
-            this.valorFinal += item.getValorItem();
+    public Pedido(ItemPedido item) {
+        adicionaItemAoPedido(item);
+    }
+
+    public Pedido(Carrinho carrinho) {
+        List<ItemPedido> listaCarrinho = carrinho.getCarrinho();
+        for (ItemPedido itemCarrinho : listaCarrinho) {
+            adicionaItemAoPedido(itemCarrinho);
+            carrinho.removeItemCarrinho(itemCarrinho);
         }
+    }
+
+    private void adicionaItemAoPedido(ItemPedido item) {
+        this.pedidos.add(item);
+        this.valorFinal += item.getValorItem();
+    }
+
+    public double getValorFinal() {
+        return this.valorFinal;
     }
 
     public List<ItemPedido> getPedido() {
         return List.copyOf(this.pedidos);
-    }
-
-    public double getValorFinal() {
-        return valorFinal;
     }
 }
 

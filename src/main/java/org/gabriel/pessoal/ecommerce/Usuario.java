@@ -22,14 +22,35 @@ public class Usuario {
         this.contaBancaria = new ContaBancaria(instituicao, saldo);
     }
 
-    public double saldoDaConta() {
+    public double verSaldoAtual() {
         return this.contaBancaria.getSaldoConta();
     }
 
-    public boolean descontaSaldo(double valor) {
-        return this.contaBancaria.descontaSaldo(valor); // delega, Lei de Demeter ok
+    public String verDadosBancarios() {
+        return contaBancaria.toString();
     }
 
+    public void comprar(double valor) {
+        this.contaBancaria.descontaSaldo(valor);
+    }
+
+    public boolean temDinheiro(double valorPedido) {
+        return this.contaBancaria.podeComprar(valorPedido); // delega, Lei de Demeter ok
+    }
+
+    public void adicionarAoCarrinho(ItemPedido item) {
+        this.carrinho.adicionaItemCarrinho(item);
+    }
+
+    public boolean carrinhoTemItens() {
+        return !carrinho.isEmpty();
+    }
+
+    public List<ItemPedido> getCarrinho() {
+        return carrinho.getCarrinho();
+    }
+
+    //Getters && Setters Padrões//
     public String getNome() {
         return nome;
     }
@@ -53,13 +74,4 @@ public class Usuario {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-    public List<ItemPedido> getCarrinho() {
-        return carrinho.getCarrinho();
-    }
-
-    public String getContaBancaria() {
-        return contaBancaria.toString();
-    }
-
 }
