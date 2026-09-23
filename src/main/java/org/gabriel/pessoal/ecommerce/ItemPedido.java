@@ -9,6 +9,10 @@ public class ItemPedido {
         this.quantidade = quantidade;
     }
 
+    public String toString() {
+        return "Nome Produto: "+this.produto.getNome()+" | Quantidade Comprada: "+quantidade;
+    }
+
     public double getValorItem() {
         return produto.getPrecoUnit() * quantidade;
     }

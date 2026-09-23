@@ -15,7 +15,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto = {Nome:"+this.nome+"; Descrição: "+this.descricao+"; Categoria: "+this.categoria+" Preço Unitário:"+this.precoUnit;
+        return "Nome: "+this.nome+" | Descrição: "+this.descricao+" | Categoria: "+this.categoria+" | Preço Unitário: "+this.precoUnit;
     }
 
     public String getNome() {

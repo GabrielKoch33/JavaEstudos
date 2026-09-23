@@ -11,6 +11,23 @@ public class ContaBancaria {
         this.saldoConta = saldoConta;
     }
 
+    @Override
+    public String toString() {
+        return titular.toString()+" |  "+instituicao+" | "+saldoConta;
+    }
+
+    public boolean podeDescontar(double valor) {
+        return valor >= 0 && valor <= this.saldoConta;
+    }
+
+    public boolean descontaSaldo(double valor) {
+        if (!podeDescontar(valor)) {
+            return false;
+        }
+        this.saldoConta -= valor;
+        return true;
+    }
+
     public String getInstituicao() {
         return instituicao;
     }
@@ -33,9 +50,5 @@ public class ContaBancaria {
 
     public void setSaldoConta(double saldoConta) {
         this.saldoConta = saldoConta;
-    }
-
-    public void descontaSaldo(double valorPedido) {
-        this.saldoConta -= valorPedido;
     }
 }

@@ -1,33 +1,33 @@
 package org.gabriel.pessoal.ecommerce;
 
 import java.util.*;
+import org.gabriel.pessoal.ecommerce.*;
 
 public class Main {
 
     static public List<Produto> exibirProdutos(Estoque estoque) {
-        Map<Produto, Integer> exibirEstoque = estoque.getEstoque();
+        Map<Produto,Integer> exibirEstoque = estoque.getEstoque();
         List<Produto> listaProdutos = new ArrayList<>(exibirEstoque.keySet());
-        for (int i = 0; i < listaProdutos.size(); i++) {
-            Produto produto = listaProdutos.get(i);
-            int quantidade = exibirEstoque.get(produto);
-            System.out.println("ID: "+(i+1)+"| Produto: "+produto.getNome()+"| Quantidade: "+quantidade);
+        int i = 0;
+        for (Produto prod : exibirEstoque.keySet()) {
+            System.out.println("ID: "+(i+1)+" | "+estoque.toString(prod));
+            i++;
         }
         return listaProdutos;
     }
 
-    static public List<ItemPedido> exibirCarrinho(Carrinho carrinho) {
+    static public int exibirCarrinho(Carrinho carrinho) {
         List<ItemPedido> exibirCarrinho = carrinho.getCarrinho();
-        for (int i = 0; i < exibirCarrinho.size(); i++) {
-            Produto produto = exibirCarrinho.get(i).getProduto();
-            int quantidade = exibirCarrinho.get(i).getQuantidade();
-            System.out.println("ID:"+(i+1)+"Produto: "+produto.getNome()+" quantidade: "+quantidade);
+        int i = 0;
+        for (ItemPedido item : exibirCarrinho) {
+            System.out.println("ID:"+(i+1)+" | "+item.toString());
+            i++;
         }
-        return exibirCarrinho;
+        return i;
     }
 
     public static void main(String[] args) {
         Estoque estoque = new Estoque();
-        Carrinho carrinho = new Carrinho();
         Scanner input = new Scanner(System.in);
 
         System.out.println("Informe seu nome: ");
@@ -83,7 +83,7 @@ public class Main {
                     }
                 }
                 case 3 -> {
-                    if (carrinho.isEmpty()) {
+                    if (usuario.getCarrinho().isEmpty()) {
                         System.out.println("Carrinho vazio!");
                     } else {
                         Main.exibirCarrinho(carrinho);
@@ -94,12 +94,12 @@ public class Main {
                         System.out.println("Estoque vazio!");
                     } else {
                         List<Produto> listaEstoque = Main.exibirProdutos(estoque);
-                        int qtdItens = listaEstoque.size();
+                        int sizeEstoque = listaEstoque.size();
                         int opcao;
                         while (true) {
-                            System.out.println("Escolha um produto para comprar: ");
+                            System.out.println("Escolha um [ID] produto para comprar: ");
                             opcao = input.nextInt();
-                            if (opcao >= 1 && opcao <= qtdItens) {
+                            if (opcao >= 1 && opcao <= sizeEstoque) {
                                 opcao--;
                                 break;
                             }
@@ -120,6 +120,7 @@ public class Main {
                             switch (opcao) {
                                 case 1 -> {
                                     carrinho.adicionaItemCarrinho(itemPedido);
+                                    estoque.decresceQtdOuRemoveItem(produto, quantidadeComprar);
                                     System.out.println("Item adiciona ao carrinho!\nLembre-se: Use a opção [5] para que os itens do seu Carrinho sejam efetivamente comprados!");
                                 }
                                 case 2 -> {
@@ -127,9 +128,13 @@ public class Main {
                                     FinalizarCompra finalizarCompra = new FinalizarCompra();
                                     if (finalizarCompra.finaliza(pedido, usuario)) {
                                         System.out.println("Pedido finalizado com sucesso!");
-                                        estoque.decresceQtdOuRemoveItem(produto, quantidadeComprar);
+                                        if (estoque.decresceQtdOuRemoveItem(produto, quantidadeComprar)) {
+                                            System.out.println("Acabaram as unidades desse produto! Volte mais tarde");
+                                            break;
+                                        }
+                                        System.out.println("**!Estoque atualizado!**");
                                     } else {
-                                        System.out.println("Saldo insuficiente!");
+                                        System.out.println("Saldo insuficiente, o item foi devolvido ao estoque!");
                                     }
                                 }
                             }
@@ -137,7 +142,11 @@ public class Main {
                     }
                 }
                 case 5 -> {
-                    System.out.println("teste incompleto");
+                    if (carrinho.isEmpty()) {
+                        System.out.println("Carrinho vazio, nada para finalizar!");
+                    } else {
+                        Main.exibirCarrinho(carrinho);
+                    }
                 }
             }
 

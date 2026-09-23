@@ -1,5 +1,7 @@
 package org.gabriel.pessoal.ecommerce;
 
+import java.util.List;
+
 public class Usuario {
     private String nome;
     private String cpf;
@@ -7,18 +9,24 @@ public class Usuario {
     private ContaBancaria contaBancaria;
     private Carrinho carrinho;
 
+    @Override
+    public String toString() {
+        return "Nome: "+nome+" CPF:"+cpf+" Telefone:"+telefone;
+    }
+
     public Usuario(String nome, String cpf, String telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.carrinho = new Carrinho();
     }
 
-    public void setContaBancaria(ContaBancaria contaBancaria) {
-        this.contaBancaria = contaBancaria;
+    public double saldoDaConta() {
+        return this.contaBancaria.getSaldoConta();
     }
 
-    public ContaBancaria getContaBancaria() {
-        return contaBancaria;
+    public boolean descontaSaldo(double valor) {
+        return this.contaBancaria.descontaSaldo(valor); // delega, Lei de Demeter ok
     }
 
     public String getNome() {
@@ -45,11 +53,19 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public Carrinho getCarrinho() {
-        return carrinho;
+    public List<ItemPedido> getCarrinho() {
+        return carrinho.getCarrinho();
     }
 
     public void setCarrinho(Carrinho carrinho) {
         this.carrinho = carrinho;
+    }
+
+    public String getContaBancaria() {
+        return contaBancaria.toString();
+    }
+
+    public void setContaBancaria(ContaBancaria contaBancaria) {
+        this.contaBancaria = contaBancaria;
     }
 }

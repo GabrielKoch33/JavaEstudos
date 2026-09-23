@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private List<ItemPedido> pedido;
+    private List<ItemPedido> pedidos;
     private double valorFinal;
     {
-        pedido = new ArrayList<>();
+        pedidos = new ArrayList<>();
     }
 
     public Pedido(ItemPedido itemPedido) {
-        this.pedido.add(itemPedido);
-        for (ItemPedido item : pedido) {
+        this.pedidos.add(itemPedido);
+        for (ItemPedido item : pedidos) {
             this.valorFinal += item.getValorItem();
         }
     }
 
     public List<ItemPedido> getPedido() {
-        return pedido;
+        return List.copyOf(this.pedidos);
     }
 
     public double getValorFinal() {
