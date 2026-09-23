@@ -37,15 +37,12 @@ public class Main {
         System.out.println("Informe seu telefone: ");
         String telefone = input.nextLine();
 
-        Usuario usuario = new Usuario(nome, cpf, telefone);
-
         System.out.println("Informe sua instituição bancária: ");
         String instituicao = input.nextLine();
         System.out.println("Informe sua saldo atual: ");
         double saldoConta = input.nextDouble();
 
-        ContaBancaria contaBancaria = new ContaBancaria(instituicao, usuario, saldoConta);
-        usuario.setContaBancaria(contaBancaria);
+        Usuario usuario = new Usuario(nome, cpf, telefone, instituicao, saldoConta);
 
         System.out.println("Seja bem vindo, "+usuario.getNome()+"!");
         while (true) {

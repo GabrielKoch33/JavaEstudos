@@ -14,11 +14,12 @@ public class Usuario {
         return "Nome: "+nome+" CPF:"+cpf+" Telefone:"+telefone;
     }
 
-    public Usuario(String nome, String cpf, String telefone) {
+    public Usuario(String nome, String cpf, String telefone, String instituicao, double saldo) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.carrinho = new Carrinho();
+        this.contaBancaria = new ContaBancaria(instituicao, saldo);
     }
 
     public double saldoDaConta() {
@@ -57,15 +58,8 @@ public class Usuario {
         return carrinho.getCarrinho();
     }
 
-    public void setCarrinho(Carrinho carrinho) {
-        this.carrinho = carrinho;
-    }
-
     public String getContaBancaria() {
         return contaBancaria.toString();
     }
 
-    public void setContaBancaria(ContaBancaria contaBancaria) {
-        this.contaBancaria = contaBancaria;
-    }
 }

@@ -2,18 +2,16 @@ package org.gabriel.pessoal.ecommerce;
 
 public class ContaBancaria {
     private String instituicao;
-    private Usuario titular;
     private double saldoConta;
 
-    public ContaBancaria(String instituicao, Usuario titular, double saldoConta) {
+    public ContaBancaria(String instituicao, double saldoConta) {
         this.instituicao = instituicao;
-        this.titular = titular;
         this.saldoConta = saldoConta;
     }
 
     @Override
     public String toString() {
-        return titular.toString()+" |  "+instituicao+" | "+saldoConta;
+        return " "+instituicao+" | "+saldoConta;
     }
 
     public boolean podeDescontar(double valor) {
@@ -34,14 +32,6 @@ public class ContaBancaria {
 
     public void setInstituicao(String instituicao) {
         this.instituicao = instituicao;
-    }
-
-    public Usuario getTitular() {
-        return titular;
-    }
-
-    public void setTitular(Usuario titular) {
-        this.titular = titular;
     }
 
     public double getSaldoConta() {
