@@ -8,19 +8,23 @@ public class Main {
     static public List<Produto> exibirProdutos(Map<Produto,Integer> estoque) {
         List<Produto> listaProdutos = new ArrayList<>(estoque.keySet());
         int i = 0;
+        System.out.println("========================================================================");
         for (Produto prod : estoque.keySet()) {
             System.out.println("ID: "+(i+1)+" | "+prod.toString()+" | Quantidade: "+estoque.get(prod));
             i++;
         }
+        System.out.println("========================================================================");
         return listaProdutos;
     }
 
     static public int exibirCarrinho(List<ItemPedido> carrinho) {
         int i = 0;
+        System.out.println("========================================================================");
         for (ItemPedido item : carrinho) {
             System.out.println("ID:"+(i+1)+" | "+item.toString());
             i++;
         }
+        System.out.println("========================================================================");
         return i;
     }
 
@@ -45,18 +49,24 @@ public class Main {
         System.out.println("Seja bem vindo, "+usuario.getNome()+"!");
         while (true) {
             System.out.println("=".repeat(30));
+            System.out.println("[0] - Depositar mais dinheiro (Não diga nada ao leão)");
             System.out.println("[1] - Adicionar Produtos no Estoque");
             System.out.println("[2] - Ver Produtos Disponíveis");
             System.out.println("[3] - Ver Carrinho");
             System.out.println("[4] - Comprar/Adicionar Carrinho");
-            System.out.println("[5] - Finalizar Carrinho ");
+            System.out.println("[5] - Revisar Carrinho");
+            System.out.println("[6] - Finalizar Carrinho ");
             System.out.println("=".repeat(30));
             System.out.print("R: ");
             int escolha = Math.abs(input.nextInt());
-
+            input.nextLine();
             switch (escolha) {
+                case 0 -> {
+                    System.out.println("Informe uma quantia para depositar: ");
+                    double valor = input.nextDouble();
+                    usuario.guardarDinheiro(valor);
+                }
                 case 1 -> {
-                    input.nextLine();
                     System.out.println("Informe o nome do produto: ");
                     String nomeProd = input.nextLine();
                     System.out.println("Informe uma descrição: ");
@@ -140,11 +150,41 @@ public class Main {
                     if (usuario.carrinhoTemItens()) {
                         System.out.println("Carrinho vazio, nada para finalizar!");
                     } else {
-                        Main.exibirCarrinho(usuario.getCarrinho());
+                        int tamCarrinho = Main.exibirCarrinho(usuario.getCarrinho());
+                        System.out.println("Ainda deseja revisar algum pedido?\n[S] - Sim\n[N] - Não");
+                        String revisar = String.valueOf(input.next().toLowerCase().trim().charAt(0));
+                        if (revisar.equals("n")) {
+                            break;
+                        }
+                        System.out.println("=========================================================");
+                        int opcao;
+                        while (true) {
+                            System.out.println("Escolha um [ID] produto para revisar: ");
+                            opcao = input.nextInt();
+                            if (opcao >= 1 && opcao <= tamCarrinho) {
+                                opcao--;
+                                break;
+                            }
+                        }
+                        while (true) {
+                            System.out.println("[1] Comprar mais\n[2] Comprar menos\n[3] Remover item ");
+                            opcao = input.nextInt();
+                            if (opcao >= 1 && opcao <= 3) {
+                                break;
+                            }
+                            // incompleto
+                        }
                     }
                 }
+                case 6 -> {
+                    if (usuario.carrinhoTemItens()) {
+                        System.out.println("Carrinho vazio, nada para finalizar!");
+                        break;
+                    }
+                    System.out.println();
+                    // incompleto
+                }
             }
-
         }
     }
 }

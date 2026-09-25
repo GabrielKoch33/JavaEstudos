@@ -30,6 +30,10 @@ public class Usuario {
         return contaBancaria.toString();
     }
 
+    public void guardarDinheiro(double valor) {
+        this.contaBancaria.recebeDinheiro(valor);
+    }
+
     public void comprar(double valor) {
         this.contaBancaria.descontaSaldo(valor);
     }

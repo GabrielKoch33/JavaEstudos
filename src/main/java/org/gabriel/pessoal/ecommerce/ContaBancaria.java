@@ -22,6 +22,10 @@ public class ContaBancaria {
         this.saldoConta -= valor;
     }
 
+    public void recebeDinheiro (double valor) {
+        this.saldoConta += valor;
+    }
+
     //Getters && Setters Padrões//
     public String getInstituicao() {
         return this.instituicao;
