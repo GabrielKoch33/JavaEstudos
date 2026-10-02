@@ -184,7 +184,10 @@ public class Main {
                                 List<Produto> returnEstoque = exibirProdutos(estoque.getEstoque());
                                 int qtdComprar;
                                 try {
-                                    qtdComprar = input.nextInt();
+                                    // Caso usarmos nextInt() para ler um valor, o método não converte possíveis entradas
+                                    // de ponto flutuante em inteiros, isso gera um erro de compilação. Uma forma de tratar isso
+                                    // é ler o número como double/float e então fazer casting (int) com o valor;
+                                    qtdComprar = (int) input.nextDouble();
                                 } catch (Exception e) {
                                     System.out.println("Você precisa comprar quantidades inteiras de itens!");
                                     input.nextLine();
@@ -195,14 +198,8 @@ public class Main {
                                     System.out.println("Insira uma quantidade existênte do produto");
                                     break;
                                 }
-                                if (!usuario.temDinheiro(prod.getPrecoUnit())) {
-                                    System.out.println("Saldo insuficiente");
-                                    break;
-                                }
-                                // Sucess
                                 estoque.decresceQtdOuRemoveItem(prod, qtdComprar);
-                                usuario
-
+                                usuario.atualizarCarrinho(prod.getNome(), qtdComprar);
                             }
                             case 2 -> {
 
