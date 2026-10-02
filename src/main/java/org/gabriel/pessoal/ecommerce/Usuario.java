@@ -46,6 +46,10 @@ public class Usuario {
         this.carrinho.adicionaItemCarrinho(item);
     }
 
+    public void atualizarCarrinho (String produtoNome, int novaQuantidade) {
+     this.carrinho.updateCarrinho(produtoNome, novaQuantidade);
+    }
+
     public boolean carrinhoTemItens() {
         return !carrinho.isEmpty();
     }

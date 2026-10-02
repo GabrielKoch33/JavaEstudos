@@ -32,4 +32,8 @@ public class ItemPedido {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+    public String nomeProduto() {
+        return produto.getNome();
+    }
 }

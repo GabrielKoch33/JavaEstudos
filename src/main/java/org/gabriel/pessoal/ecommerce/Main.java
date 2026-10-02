@@ -77,7 +77,7 @@ public class Main {
                     double precoUnit = input.nextDouble();
                     System.out.println("Informe a quantidade em estoque para esse produto: ");
                     int quantidadeDisponivel = input.nextInt();
-                    System.out.println("Protudo cadastrado com sucesso!");
+                    System.out.println("Produto cadastrado com sucesso!");
                     estoque.adicionarProdutoEstoque(new Produto(nomeProd, descProd, catProd, precoUnit),quantidadeDisponivel);
                 }
                 case 2 -> {
@@ -157,22 +157,59 @@ public class Main {
                             break;
                         }
                         System.out.println("=========================================================");
-                        int opcao;
+                        int idProd;
                         while (true) {
                             System.out.println("Escolha um [ID] produto para revisar: ");
-                            opcao = input.nextInt();
-                            if (opcao >= 1 && opcao <= tamCarrinho) {
-                                opcao--;
+                            idProd = input.nextInt();
+                            if (idProd >= 1 && idProd <= tamCarrinho) {
+                                idProd--;
                                 break;
                             }
                         }
+                        int opcao;
                         while (true) {
                             System.out.println("[1] Comprar mais\n[2] Comprar menos\n[3] Remover item ");
                             opcao = input.nextInt();
                             if (opcao >= 1 && opcao <= 3) {
                                 break;
                             }
-                            // incompleto
+                            System.out.println("Tente novamente!");
+                        }
+                        switch (opcao) {
+                            case 1 -> {
+                                if (estoque.isEmpty()) {
+                                    System.out.println("Estoque está vazio, volte mais tarde!");
+                                    break;
+                                }
+                                List<Produto> returnEstoque = exibirProdutos(estoque.getEstoque());
+                                int qtdComprar;
+                                try {
+                                    qtdComprar = input.nextInt();
+                                } catch (Exception e) {
+                                    System.out.println("Você precisa comprar quantidades inteiras de itens!");
+                                    input.nextLine();
+                                    break;
+                                }
+                                Produto prod = returnEstoque.get(idProd);
+                                if (qtdComprar > estoque.getQtdItem(prod)) {
+                                    System.out.println("Insira uma quantidade existênte do produto");
+                                    break;
+                                }
+                                if (!usuario.temDinheiro(prod.getPrecoUnit())) {
+                                    System.out.println("Saldo insuficiente");
+                                    break;
+                                }
+                                // Sucess
+                                estoque.decresceQtdOuRemoveItem(prod, qtdComprar);
+                                usuario
+
+                            }
+                            case 2 -> {
+
+                            }
+                            case 3 -> {
+
+                            }
                         }
                     }
                 }

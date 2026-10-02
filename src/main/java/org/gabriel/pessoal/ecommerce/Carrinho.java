@@ -25,4 +25,14 @@ public class Carrinho {
     public boolean isEmpty() {
         return carrinho.isEmpty();
     }
+
+    public boolean updateCarrinho(String produtoNome, int novaQuantidade) {
+        for (ItemPedido item : carrinho) {
+            if (item.nomeProduto().equals(produtoNome)) {
+                item.setQuantidade(novaQuantidade);
+                return true;
+            }
+        }
+        return false;
+    }
 }
