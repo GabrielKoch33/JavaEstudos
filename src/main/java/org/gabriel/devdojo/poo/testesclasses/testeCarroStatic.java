@@ -1,6 +1,6 @@
 package org.gabriel.devdojo.poo.testesclasses;
 
-import org.gabriel.devdojo.poo.classes.CarroStatic;
+import org.gabriel.devdojo.poo.classes.finalStaticModifiers.CarroStatic;
 
 public class testeCarroStatic {
     public static void main(String[] args) {

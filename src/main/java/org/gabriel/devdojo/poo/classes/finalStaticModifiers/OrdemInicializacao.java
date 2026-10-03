@@ -1,4 +1,4 @@
-package org.gabriel.devdojo.poo.classes;
+package org.gabriel.devdojo.poo.classes.finalStaticModifiers;
 
 public class OrdemInicializacao {
     // ATRIBUTOS SÃO INICIADOS ANTES MESMO DOS CONSTRUTORES PELO JAVA

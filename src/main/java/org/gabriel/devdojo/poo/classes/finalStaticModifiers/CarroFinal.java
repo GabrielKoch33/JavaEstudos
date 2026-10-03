@@ -1,4 +1,4 @@
-package org.gabriel.devdojo.poo.classes;
+package org.gabriel.devdojo.poo.classes.finalStaticModifiers;
 
 public class CarroFinal {
     private String nomeDonoCarro;
