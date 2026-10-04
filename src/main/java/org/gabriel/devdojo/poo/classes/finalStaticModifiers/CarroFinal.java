@@ -53,7 +53,7 @@ public class CarroFinal {
                 "em um Construtor ou atribuído na mesma linha da declaração";
     }
 
-    public void imprime3() {
+    public final void imprime3() {
         System.out.println("Public: "   +CONSTANTE_UNIVERSAL);
         System.out.println("Protected: "+CONSTANTE_HERANCA_E_PACOTE);
         System.out.println("Private: "  +CONSTANTE_RESTRITA_A_CLASSE_ATUAL);

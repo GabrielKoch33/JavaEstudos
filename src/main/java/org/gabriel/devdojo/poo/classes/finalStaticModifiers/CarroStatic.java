@@ -1,6 +1,6 @@
 package org.gabriel.devdojo.poo.classes.finalStaticModifiers;
 
-public class CarroStatic {
+public class CarroStatic extends CarroFinal{
     private String marca;
     private double velocidadeMax;
     private static double velocidadeLimite = 250;
@@ -12,6 +12,7 @@ public class CarroStatic {
      * static define um valor padrão para a classe e suas filhas. 'final' impede que alteremos o valor de uma variavel
      * */
     public CarroStatic(String marca, double velocidadeMax) {
+        super(2222,"ddd", "dddd");
         this.marca = marca;
         this.velocidadeMax = velocidadeMax;
     }
@@ -20,7 +21,7 @@ public class CarroStatic {
         CarroStatic.velocidadeLimite = velLimite;
     }
 
-    public void imprime() {
+    public void imprimeInner() {
         System.out.println("========================================");
         System.out.println("Marca: "+ this.marca);
         System.out.println("Vel. Máxima: "+ this.velocidadeMax);
