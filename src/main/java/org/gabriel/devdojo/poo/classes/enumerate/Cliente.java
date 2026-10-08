@@ -7,6 +7,7 @@ public class Cliente {
         ADULTO,
         IDOSO,
     }
+    // Enum privado, pode ser usado apenas dentro dessa classe
 
     private String nome;
     private String tipo;
@@ -28,11 +29,11 @@ public class Cliente {
     public Cliente (String nome, int idade, TipoCliente tipoCli) {
         this.nome = nome;
         this.tipoCliente = tipoCli;
-        switch (idade) {
-            case int i when i <= 12 -> this.faixaEtaria = FaixaEtaria.CRIANCA;
-            case int i when i < 18 -> this.faixaEtaria = FaixaEtaria.ADOLESCENTE;
-            case int i when i < 60 -> this.faixaEtaria = FaixaEtaria.ADULTO;
-            case int i -> this.faixaEtaria = FaixaEtaria.IDOSO;
-        }
+        this.faixaEtaria = switch (idade) {
+            case int i when i <= 12 -> FaixaEtaria.CRIANCA;
+            case int i when i < 18  -> FaixaEtaria.ADOLESCENTE;
+            case int i when i < 60  -> FaixaEtaria.ADULTO;
+            default                 -> FaixaEtaria.IDOSO;
+        };
     }
 }
