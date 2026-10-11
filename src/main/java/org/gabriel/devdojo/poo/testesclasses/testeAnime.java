@@ -1,8 +1,6 @@
 package org.gabriel.devdojo.poo.testesclasses;
 
-import org.gabriel.devdojo.poo.classes.Anime;
-
-import java.util.Scanner;
+import org.gabriel.devdojo.poo.classes.finalStaticModifiers.Anime;
 
 public class testeAnime {
     public static void main(String[] args) {

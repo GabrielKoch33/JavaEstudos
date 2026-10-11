@@ -15,5 +15,9 @@ public class ClienteTeste {
          System.out.println(
                  TipoCliente.PESSOA_JURIDICA.getDescricao()
          );
+
+         System.out.println(
+                 TipoCliente.buscaPorValores("Pessoa Física - CPF")
+         );
     }
 }

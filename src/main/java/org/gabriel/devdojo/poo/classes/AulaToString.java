@@ -37,7 +37,7 @@ public class AulaToString {
      * de argumento passado e usa o método com parâmetros compatíveis. Para aplicar a sobrecarga deve-se ter:<br> <b>-Quantidade de parâmetros diferentes entre os métodos.</b>,
      * <br><b>-O tipo dos parâmetros devem ser parcial ou totalmente diferentes.</b><br><b>-A ordem dos parâmetros devem ser diferentes</b>.
      * **/
-    public static void main(String[] args) {
+    static void main(String[] args) {
         AulaToString aula = new AulaToString("Renave", "1234567/000-21", 213344);
         System.out.println(aula.toString());
     }

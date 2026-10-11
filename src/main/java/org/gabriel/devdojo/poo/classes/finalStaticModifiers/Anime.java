@@ -1,6 +1,4 @@
-package org.gabriel.devdojo.poo.classes;
-
-import java.util.Scanner;
+package org.gabriel.devdojo.poo.classes.finalStaticModifiers;
 
 public class Anime {
     // ATRIBUTOS SÃO INICIADOS ANTES MESMO DOS CONSTRUTORES PELO JAVA
