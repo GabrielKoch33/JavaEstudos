@@ -8,6 +8,11 @@ public class Desenvolvedor extends Funcionario {
 
     @Override
     public double calculaBonus() {
-        return this.salario *= 0.3;
+        return this.salario += (this.salario * 0.3);
+    }
+
+    @Override
+    public void imprime() {
+
     }
 }

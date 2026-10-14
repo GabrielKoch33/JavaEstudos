@@ -4,7 +4,7 @@ package org.gabriel.devdojo.poo.classes.abstractClasses;
  * Funcionário agora é abstrato, é uma classe que não pode ser inicializada <br><br>
  * Toda classe Abstrata existe para ser estendida, logo não pode ser final
  * **/
-public abstract class Funcionario {
+public abstract class Funcionario extends Pessoa {
     protected String nome;
     protected double salario;
 
