@@ -18,6 +18,12 @@ public interface DataLoader {
         return "host:20202;database:'banco_teste';senha:3322";
     }
 
+    private static void metodoAuxiliarInicializacao() {
+        System.out.println("Só é chamado pela interface (caso fosse public)");
+        System.out.println("Não pode ser implementado nas classes");
+
+    }
+
     void load();
 
 }

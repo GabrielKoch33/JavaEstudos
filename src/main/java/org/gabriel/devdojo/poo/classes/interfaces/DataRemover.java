@@ -3,7 +3,8 @@ package org.gabriel.devdojo.poo.classes.interfaces;
 public interface DataRemover {
 
     /**
-     * Toda variavel dentro de uma interface (assim como enum) são constantes
+     * Toda variável numa interface (assim como enum) são constantes.
+     * <public> <static> <final>
      * **/
     String DATA_BASE_CONECTION_STR = "abcdefghijklmnopqrstuvwxyz";
     int NUM_MAX_CONNECTIONS = 2;
@@ -14,7 +15,9 @@ public interface DataRemover {
     void removerData();
 
     /**
-     * Um método static ao ser sobrescrito continua pertencendo a interface, o mesmo não é modificado pela classe
+     * Métodos static de interface NÃO podem ser sobrescritos e nem chamados
+     * via objetos de uma classe que implemente sua interface.
+     * Sua chamada é exclusiva via NomeInterface.metodoStatic();
      * **/
     static boolean validaConexao() {
         int x = 10;
