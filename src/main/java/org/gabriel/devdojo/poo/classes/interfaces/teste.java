@@ -5,5 +5,10 @@ public class teste {
         FileDataLoader file = new FileDataLoader();
 
         DataRemover.validaConexao();
+
+        System.out.println(DataRemover.NUM_MAX_CONNECTIONS);
+        System.out.println(DataRemover.DATA_BASE_CONECTION_STR);
+
+        System.out.println("atributos dentro de interfaces são constantes que só podem ser chamadas daquela forma");
     }
 }

@@ -1,4 +1,4 @@
-package org.gabriel.devdojo.poo.testesclasses;
+package org.gabriel.devdojo.poo.classes.testesclasses;
 import org.gabriel.devdojo.poo.classes.Pessoa;
 
 public class testePessoa{
