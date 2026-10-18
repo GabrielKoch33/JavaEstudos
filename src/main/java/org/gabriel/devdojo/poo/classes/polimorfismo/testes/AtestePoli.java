@@ -1,7 +1,7 @@
 package org.gabriel.devdojo.poo.classes.polimorfismo.testes;
 
 import org.gabriel.devdojo.poo.classes.polimorfismo.Computador;
-import org.gabriel.devdojo.poo.classes.polimorfismo.Relatorio;
+import org.gabriel.devdojo.poo.classes.polimorfismo.etc.Relatorio;
 import org.gabriel.devdojo.poo.classes.polimorfismo.Tomate;
 
 public class AtestePoli {

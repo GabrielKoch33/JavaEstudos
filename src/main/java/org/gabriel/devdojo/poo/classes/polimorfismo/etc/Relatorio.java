@@ -1,4 +1,6 @@
-package org.gabriel.devdojo.poo.classes.polimorfismo;
+package org.gabriel.devdojo.poo.classes.polimorfismo.etc;
+
+import org.gabriel.devdojo.poo.classes.polimorfismo.Produto;
 
 public class Relatorio {
     public static void emitirRelatorioFiscal (Produto produto) {
