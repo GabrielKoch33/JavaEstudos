@@ -5,12 +5,12 @@ import org.gabriel.devdojo.poo.classes.polimorfismo.etc.Relatorio;
 import org.gabriel.devdojo.poo.classes.polimorfismo.video1.Tomate;
 
 public class AtestePoli {
-    static void main() {
+    public static void main(String[] args) {
         Computador pc = new Computador("Lenovo", 1200);
         Computador pc1 = new Computador("Pc Xuxa", 10000);
 
-        Tomate tomate1 = new Tomate("Tomate Bolinha", 14);
-        Tomate tomate3 = new Tomate("Tomate Cereja", 10);
+        Tomate tomate1 = new Tomate("Tomate Bolinha", 14,"14/02/2026");
+        Tomate tomate3 = new Tomate("Tomate Cereja", 10,"24/05/2001");
 
         Relatorio.emitirRelatorioFiscal(pc);
         System.out.println("---------------------------------------------");

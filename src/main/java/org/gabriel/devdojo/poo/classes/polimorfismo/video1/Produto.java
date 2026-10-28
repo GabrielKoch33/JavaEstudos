@@ -53,4 +53,6 @@ public abstract class Produto implements TaxaImposto {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
+    public abstract int idadeMinima();
 }

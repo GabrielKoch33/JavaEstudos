@@ -6,4 +6,9 @@ public class Computador extends Produto {
     public Computador(String nome, double valor) {
         super(nome, valor, ImpostosPorCategoria.TECNOLOGIA);
     }
+
+    @Override
+    public int idadeMinima() {
+        return 10;
+    }
 }
