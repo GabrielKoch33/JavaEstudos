@@ -12,12 +12,12 @@ public class Cliente {
     public Cliente (String nome, int idade, TipoCliente tipoCli) {
         this.nome = nome;
         this.tipoCliente = tipoCli;
-        this.faixaEtaria = switch (idade) {
-            case int i when i <= 12 -> FaixaEtaria.CRIANCA;
-            case int i when i < 18  -> FaixaEtaria.ADOLESCENTE;
-            case int i when i < 60  -> FaixaEtaria.ADULTO;
-            default                 -> FaixaEtaria.IDOSO;
-        };
+//        this.faixaEtaria = switch (idade) {
+//            case int i when i <= 12 -> FaixaEtaria.CRIANCA;
+//            case int i when i < 18  -> FaixaEtaria.ADOLESCENTE;
+//            case int i when i < 60  -> FaixaEtaria.ADULTO;
+//            default                 -> FaixaEtaria.IDOSO;
+//        };
     }
 
     public String getNome() {

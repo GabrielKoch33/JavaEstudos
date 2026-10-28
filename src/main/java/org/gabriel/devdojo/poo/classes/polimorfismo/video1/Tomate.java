@@ -1,4 +1,4 @@
-package org.gabriel.devdojo.poo.classes.polimorfismo;
+package org.gabriel.devdojo.poo.classes.polimorfismo.video1;
 
 import org.gabriel.devdojo.poo.classes.polimorfismo.etc.ImpostosPorCategoria;
 

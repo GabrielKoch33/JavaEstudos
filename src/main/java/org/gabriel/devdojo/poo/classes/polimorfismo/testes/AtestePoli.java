@@ -1,8 +1,8 @@
 package org.gabriel.devdojo.poo.classes.polimorfismo.testes;
 
-import org.gabriel.devdojo.poo.classes.polimorfismo.Computador;
+import org.gabriel.devdojo.poo.classes.polimorfismo.video1.Computador;
 import org.gabriel.devdojo.poo.classes.polimorfismo.etc.Relatorio;
-import org.gabriel.devdojo.poo.classes.polimorfismo.Tomate;
+import org.gabriel.devdojo.poo.classes.polimorfismo.video1.Tomate;
 
 public class AtestePoli {
     static void main() {
