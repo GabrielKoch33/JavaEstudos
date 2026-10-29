@@ -11,7 +11,7 @@ public class Tomate extends Produto {
     }
 
     public String getDataValidade() {
-        return dataValidade;
+        return this.dataValidade;
     }
 
     public void setDataValidade(String dataValidade) {
@@ -22,4 +22,6 @@ public class Tomate extends Produto {
     public int idadeMinima() {
         return 3;
     }
+
+
 }

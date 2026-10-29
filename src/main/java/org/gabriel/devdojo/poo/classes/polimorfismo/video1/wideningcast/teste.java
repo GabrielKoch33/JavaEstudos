@@ -3,8 +3,8 @@ package org.gabriel.devdojo.poo.classes.polimorfismo.video1.wideningcast;
 import org.gabriel.devdojo.poo.classes.polimorfismo.video1.Computador;
 import org.gabriel.devdojo.poo.classes.polimorfismo.video1.Produto;
 import org.gabriel.devdojo.poo.classes.polimorfismo.video1.Tomate;
+import org.gabriel.devdojo.poo.classes.polimorfismo.etc.Relatorio;
 
-import java.net.PortUnreachableException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +22,14 @@ public class teste {
         List<Produto> itens = new ArrayList<>();
         System.out.println("Widening Cast (Aumentando o tipo do objeto)");
 
+        // Todos as subclasses de produto possuem esse método
         for (Produto item : itens) {
             System.out.println(item.idadeMinima());
         }
+
+        Tomate t1 = new Tomate("Tomate Bolinha", 14,"14/02/2026");
+        t1.setDataValidade("25/01/2026");
+
+        Relatorio.emitirRelatorioFiscal(t1);
     }
 }
