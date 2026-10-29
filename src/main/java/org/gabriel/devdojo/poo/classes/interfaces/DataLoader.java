@@ -7,7 +7,7 @@ public interface DataLoader {
      * obrigando os mesmos a implementar os novos métodos, a solução foi permitir a existência de métodos não-abstratos dentro das
      * interfaces, dessa forma o método NÃO É OBRIGATÓRIO implementar (o método deverá ter um corpo base)
      * **/
-    default boolean habilitarAdicionais() {
+    default boolean naoObrigaImplementar() {
         System.out.println("Ligando extensões");
         var conexao = getConexao();
         return true;
@@ -18,8 +18,12 @@ public interface DataLoader {
         return "host:20202;database:'banco_teste';senha:3322";
     }
 
+    public static void Message() {
+        System.out.println("Sou acessada via Interface.Message() em uma classe que a implementa");
+    }
+
     private static void metodoAuxiliarInicializacao() {
-        System.out.println("Só é chamado pela interface (caso fosse public)");
+        System.out.println("Só é chamado dentro interface (caso fosse public)");
         System.out.println("Não pode ser implementado nas classes");
 
     }
