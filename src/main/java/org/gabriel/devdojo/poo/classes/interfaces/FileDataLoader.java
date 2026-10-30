@@ -20,8 +20,8 @@ public class FileDataLoader implements DataLoader, DataRemover {
     /**
      * Método não-abstrato da interface (não obrigatório) sendo sobrescrito
      * **/
-    @Override
-    public boolean habilitarAdicionais() {
-        return true;
-    }
+//    @Override
+//    public boolean habilitarAdicionais() {
+//        return true;
+//    }
 }
