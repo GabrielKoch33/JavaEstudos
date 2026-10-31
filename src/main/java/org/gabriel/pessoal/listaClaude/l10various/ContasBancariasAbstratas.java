@@ -42,8 +42,19 @@ public class ContasBancariasAbstratas {
 
     public static void main(String[] args) {
         // TODO
-        ContaPoupanca cp = new ContaPoupanca("Eu","9-3",13);
-        ContaCorrente cc = new ContaCorrente("Eu","9-3",10);
+        ContaBancaria cp  = new ContaPoupanca("Eu","9-3",13);
+        ContaBancaria cc  = new ContaCorrente("Eu","9-3",10);
+        ContaBancaria cp1 = new ContaCorrente("Eu","9-3",22);
+        ContaBancaria cc1 = new ContaPoupanca("Eu","9-3",18);
+
+        if (cp instanceof ContaPoupanca) {
+            ContaPoupanca contaP = (ContaPoupanca) cp;
+            contaP.exibirSaldo();
+        }
+        // Versão simplificada (java 16+)
+        if (cc instanceof ContaCorrente contaC) {
+            contaC.exibirSaldo();
+        }
 
         ContaBancaria[] contas = {cp,cc};
         double vlr = 100;
@@ -55,8 +66,8 @@ public class ContasBancariasAbstratas {
         }
         System.out.println("============");
 
-        // usando como tipo o da Inteface Conta
-        // como contabancaria implementa ela, suas filhas tambem herdam os metodos
+        // usando como tipo o da Interface Conta
+        // como ContaBancaria implementa ela, suas filhas também herdam os metodos
         for (Conta conta : contas) {
             conta.aplicarRendimento();     // especial para cada filha
             conta.depositar(1000); // unica na Pai
