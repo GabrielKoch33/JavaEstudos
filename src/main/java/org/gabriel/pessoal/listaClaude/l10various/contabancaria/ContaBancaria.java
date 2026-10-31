@@ -1,6 +1,6 @@
 package org.gabriel.pessoal.listaClaude.l10various.contabancaria;
 
-public abstract class ContaBancaria {
+public abstract class ContaBancaria implements Conta{
     /**
      * Atributos protected para acessar nas filhas
     **/
@@ -38,17 +38,19 @@ public abstract class ContaBancaria {
         this.saldo = saldo;
     }
 
-    public final void depositar(double valor) {
+    @Override
+    public final void depositar (double valor) {
         if (valor > 0) {
             this.saldo += valor;
             this.exibirSaldo();
         }
     }
 
-    public abstract void sacar(double valor);
+//    public abstract void sacar(double valor);
+//
+//    abstract void aplicarRendimento();
 
-    abstract void aplicarRendimento();
-
+    @Override
     public void exibirSaldo() {
         System.out.println(this.saldo);
     }

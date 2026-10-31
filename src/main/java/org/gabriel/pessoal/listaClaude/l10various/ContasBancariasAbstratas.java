@@ -1,5 +1,6 @@
 package org.gabriel.pessoal.listaClaude.l10various;
 
+import org.gabriel.pessoal.listaClaude.l10various.contabancaria.Conta;
 import org.gabriel.pessoal.listaClaude.l10various.contabancaria.ContaBancaria;
 import org.gabriel.pessoal.listaClaude.l10various.contabancaria.ContaCorrente;
 import org.gabriel.pessoal.listaClaude.l10various.contabancaria.ContaPoupanca;
@@ -51,6 +52,17 @@ public class ContasBancariasAbstratas {
             ContaBancaria c = contas[i];
             c.depositar(vlr);
             c.sacar(desc);
+        }
+        System.out.println("============");
+
+        // usando como tipo o da Inteface Conta
+        // como contabancaria implementa ela, suas filhas tambem herdam os metodos
+        for (Conta conta : contas) {
+            conta.aplicarRendimento();     // especial para cada filha
+            conta.depositar(1000); // unica na Pai
+            conta.sacar(1400);     // especial para cada filha
+            conta.sacar(800);
+            conta.exibirSaldo();           // unica na Pai
         }
     }
 }
