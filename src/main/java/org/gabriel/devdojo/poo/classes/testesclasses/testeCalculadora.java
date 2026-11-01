@@ -1,7 +1,5 @@
 package org.gabriel.devdojo.poo.classes.testesclasses;
 
-import org.gabriel.devdojo.poo.classes.Calculadora;
-
 import java.util.Scanner;
 
 public class testeCalculadora {

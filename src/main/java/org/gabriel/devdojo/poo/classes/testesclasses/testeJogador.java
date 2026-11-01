@@ -1,7 +1,5 @@
 package org.gabriel.devdojo.poo.classes.testesclasses;
 
-import org.gabriel.devdojo.poo.classes.Jogador;
-
 public class testeJogador {
     public static void main(String[] args) {
         Jogador j1 = new Jogador("Pelé");

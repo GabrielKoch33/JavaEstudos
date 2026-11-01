@@ -1,4 +1,4 @@
-package org.gabriel.devdojo.poo.classes;
+package org.gabriel.devdojo.poo.classes.testesclasses;
 
 public final class Calculadora {
     // Testando atributos

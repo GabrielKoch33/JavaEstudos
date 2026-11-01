@@ -1,4 +1,4 @@
-package org.gabriel.devdojo.poo.classes;
+package org.gabriel.devdojo.poo.classes.testesclasses;
 
 public class Estudante {
     public String nome = null;

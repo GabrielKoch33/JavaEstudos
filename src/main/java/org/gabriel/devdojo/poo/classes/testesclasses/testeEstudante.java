@@ -1,7 +1,5 @@
 package org.gabriel.devdojo.poo.classes.testesclasses;
 
-import org.gabriel.devdojo.poo.classes.Estudante;
-
 public class testeEstudante {
     public static void main(String[] args) {
         Estudante estudante = new Estudante();

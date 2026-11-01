@@ -1,5 +1,4 @@
 package org.gabriel.devdojo.poo.classes.testesclasses;
-import org.gabriel.devdojo.poo.classes.Pessoa;
 
 public class testePessoa{
     public static void main(String[] args) {
