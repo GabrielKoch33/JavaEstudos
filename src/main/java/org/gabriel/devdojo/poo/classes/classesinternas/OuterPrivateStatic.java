@@ -5,41 +5,31 @@ public class OuterPrivateStatic {
     private double salario = 2500;
     private char sexo = 'M';
 
-    public boolean aptoAposentadoria() {
-        InnerPrivate in = new InnerPrivate(false);
-        return in.validaAposentadoria(idade);
+    public void testeDeClassesInternas() {
+
     }
 
     private class InnerPrivate {
-        private boolean isIdoso;
+        public void print() {
 
-        public InnerPrivate(boolean isIdoso) {
-            this.isIdoso = isIdoso;
-        }
-
-        public boolean validaAposentadoria(int idade) {
-            return (idade >= 60);
         }
     }
 
     public class InnerPublic {
-        private boolean isWoman;
+        public void print() {
 
-        public boolean validaMulher() {
-            return sexo == 'M';
         }
     }
 
     public static class InnerStatic {
+        public void print() {
 
-        public static void innerStaticPublic() {
-            System.out.println("innerStaticPublic");
         }
     }
 
     private static class InnerPrivateStatic {
-        public static void innerPrivateStatic() {
-            System.out.println("innerPrivateStatic");
+        public void print() {
+
         }
     }
 

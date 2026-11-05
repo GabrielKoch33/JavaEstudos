@@ -10,20 +10,21 @@ package org.gabriel.devdojo.poo.classes.classesinternas;
  * Podem usar atributos da classe externa assim como variáveis internas do método e parâmetros passados
  * <br><br>
  * Não devem, e não podem, alterar variáveis locais, nem os atributos da classe local e
- * nem os parâmetros durante sua curta vida.
+ * nem os parâmetros durante sua curta vida, deve se ter consciência de não alterar as varáveis.
  * <br><br>
  * **/
 public class LocalClasses {
     private String nome = "Luffy";
 
-    void print(String param) {
-        final int age = 15;
+    public void print(String param) {
+        int age = 15;
         System.out.println("Nome externo: "+this.nome);
-        final String lastName = "D.";
+        String lastName = "da Silva";
         nome = "Elizângela";
 
         class local {
             int idade = 10;
+
             public void printLocal() {
                 System.out.println("Nome local: " + nome);
                 System.out.println("LastName local: " + lastName);
@@ -31,6 +32,7 @@ public class LocalClasses {
                 System.out.println(param);
             }
         }
+
         local locClass = new local();
         locClass.printLocal();
     }
