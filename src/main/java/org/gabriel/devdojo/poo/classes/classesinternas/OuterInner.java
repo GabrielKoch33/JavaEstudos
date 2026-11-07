@@ -1,11 +1,7 @@
 package org.gabriel.devdojo.poo.classes.classesinternas;
 
 /**
- * Muito usado em interfaces gráficas quando um componente depende e está estritamente conectado
- * ao elemento/componente externo.
- * Ex: Tela Principal -> Tela de ChatBot -> Tela de Teclado e Envio
- *
- * Usado no Design Pattern Builder()
+ * 
  * **/
 public class OuterInner {
     private String nome = "Gabriel Koch da Silva";
@@ -27,6 +23,9 @@ public class OuterInner {
         }
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         OuterInner outer1 = new OuterInner();
         OuterInner.Inner inner1 = outer1.new Inner();
