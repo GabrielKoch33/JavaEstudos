@@ -14,7 +14,7 @@ package org.gabriel.pessoal.revisao.poo;
  *
  * <h3>Requisitos</h3>
  * <ul>
- *   <li>Um comentário com a previsão antes de cada trecho de teste.</li>
+ *   <li>Um comentário com a previsão antes de cada trecho de testeRuntime.</li>
  *   <li>Provar que o bloco {@code static} roda uma única vez, mesmo com vários objetos.</li>
  *   <li>Provar que o bloco {@code static} só roda quando a classe é usada pela primeira vez (e não ao iniciar o programa).</li>
  *   <li>Mostrar o que acontece quando um inicializador de campo usa um campo declarado <i>depois</i> dele.</li>

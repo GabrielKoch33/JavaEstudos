@@ -6,7 +6,7 @@ package org.gabriel.pessoal.lista2;
  * {@code Contato}. Implemente uma busca que recebe um nome e retorna o
  * {@code Contato} correspondente (ou indica que não achou).
  * <p>
- * Ao comparar o nome buscado com o nome de cada contato, teste usando
+ * Ao comparar o nome buscado com o nome de cada contato, testeRuntime usando
  * {@code ==} primeiro (só pra ver o que acontece) e depois usando o
  * método correto de comparação de {@code String}.
  * <p>

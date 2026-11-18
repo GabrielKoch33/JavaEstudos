@@ -32,7 +32,7 @@ public class CaixaSaldoEletronico {
     /**
      Dado um valor a sacar(ex: R$ 385) e um array com as notas disponíveis ({100, 50, 20, 10, 5, 2}). <br><br>
      Calcule a quantidade de cada nota usando o algoritmo guloso (sempre usa a maior nota possível primeiro).<br><br>
-     Depois, teste com um valor que não é múltiplo de 2 (ex: R$ 387) e trate esse caso — o que deveria acontecer?<br><br>
+     Depois, testeRuntime com um valor que não é múltiplo de 2 (ex: R$ 387) e trate esse caso — o que deveria acontecer?<br><br>
      Pesquise: a diferença entre / e % para números inteiros em Java, e por que a ordem do array de notas (decrescente) importa tanto aqui.
      */
     public static void main(String[] args) {

@@ -2,15 +2,20 @@ package org.gabriel.devdojo.poo.classes.exceptions;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InvalidObjectException;
 
 public class Exemplo {
 
     public static void validaIdade(int age) {
         if (age < 18) {
-            throw new teste("bola");
+            throw new testeRuntime("bola");
         }
         System.out.println("Idade correta!");
+    }
+
+    public static void lancaException(int age) throws testeException {
+        if (age == 20) {
+            throw new testeException("Erro cabuloso");
+        }
     }
 
     public static void main(String[] args) {
@@ -45,7 +50,8 @@ public class Exemplo {
         // exigem tratar com Try Catch
 
         File f = new File("arquivo.txt");
-        try {  // tente fazer essa operação arriscada // caso ocorra erro, quaisquer coisas abaixo do ponto de erro são ignoradas
+        try {
+            // caso ocorra erro, quaisquer coisas abaixo do ponto de erro são ignoradas
             boolean isFileCreated = f.createNewFile();
             System.out.println(isFileCreated);
         } catch (IOException e) { // caso ocorra erro, não quebre o script e trate ele (nunca deixe em branco)// ;
@@ -59,11 +65,17 @@ public class Exemplo {
 
         try {
             validaIdade(15);
-        } catch (teste e) {
+        } catch (testeRuntime e) {
             System.out.println("idade menor de 18");
         }
 
         validaIdade(78);
+
+        try {
+            lancaException(45);
+        } catch (testeException e) {
+            System.out.println("erro cabuloso");
+        }
 
 
     }

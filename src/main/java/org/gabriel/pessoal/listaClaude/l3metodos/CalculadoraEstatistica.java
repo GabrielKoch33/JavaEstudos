@@ -16,7 +16,7 @@ package org.gabriel.pessoal.revisao.metodos;
  *   <li>Chamadas sem nenhum argumento devem devolver {@code Double.NaN} (documente).</li>
  *   <li>A mediana não pode alterar o array recebido: trabalhe em uma cópia.</li>
  *   <li>A moda deve devolver todos os valores empatados (pense no tipo de retorno).</li>
- *   <li>Escreva chamadas de teste com {@code int}, {@code double}, {@code byte}, {@code long} e array pronto, e comente qual versão foi escolhida em cada uma.</li>
+ *   <li>Escreva chamadas de testeRuntime com {@code int}, {@code double}, {@code byte}, {@code long} e array pronto, e comente qual versão foi escolhida em cada uma.</li>
  *   <li>Teste {@code media()} e {@code maximo()} sem argumentos, anote o que acontece (compila? é ambíguo?) e explique no comentário.</li>
  * </ul>
  *

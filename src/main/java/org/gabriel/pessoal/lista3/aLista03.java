@@ -72,7 +72,7 @@ public class aLista03 {
 //        ## 8. A Armadilha do `%` em Regras de Capacidade
 //Crie uma classe `Deposito` com uma capacidade máxima e itens armazenados (soma de pesos). Escreva um método `espacoRestante()` que calcula quanto ainda cabe.
 //
-//        Implemente **de propósito errado primeiro**, usando `%` em vez do operador certo, e teste com um depósito vazio (peso atual = 0). O que acontece?
+//        Implemente **de propósito errado primeiro**, usando `%` em vez do operador certo, e testeRuntime com um depósito vazio (peso atual = 0). O que acontece?
 //
 //        **Pesquise:** por que só usar `%` no lugar errado pode não só dar um resultado sem sentido, mas quebrar o programa inteiro dependendo dos valores envolvidos.
 //

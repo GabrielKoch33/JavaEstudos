@@ -20,7 +20,7 @@ package org.gabriel.pessoal.revisao.projetos;
  *   <li>Classe {@code Aluguel} associando cliente, veículo, dias e status; devolução com atraso cobra multa de 20% por dia extra.</li>
  *   <li>Persistência apenas em memória, com arrays próprios que crescem; sem coleções.</li>
  *   <li>Entradas inválidas no menu nunca devem derrubar o programa.</li>
- *   <li>No {@code main}, pelo menos 3 cenários de teste cobrindo: aluguel de veículo já alugado, devolução sem aluguel e cliente inexistente.</li>
+ *   <li>No {@code main}, pelo menos 3 cenários de testeRuntime cobrindo: aluguel de veículo já alugado, devolução sem aluguel e cliente inexistente.</li>
  * </ul>
  *
  * <h3>Desafio extra</h3>
