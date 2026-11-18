@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 01 — Unchecked, throw, try/catch/finally</h2>
  *

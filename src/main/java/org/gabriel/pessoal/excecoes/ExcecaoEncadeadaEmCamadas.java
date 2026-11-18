@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 05 — Encadeamento (cause), relançar e traduzir exceções</h2>
  *

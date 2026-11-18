@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 06 — Prever a saída (finally, return, ordem de execução)</h2>
  *

@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 03 — Exceções comuns, multi-catch e ordem dos catch</h2>
  *

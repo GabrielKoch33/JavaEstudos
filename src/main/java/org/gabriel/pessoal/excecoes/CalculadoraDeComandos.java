@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 09 — Desafio: calculadora de comandos robusta</h2>
  *

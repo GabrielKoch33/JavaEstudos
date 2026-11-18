@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 07 — Retry, laço com tratamento e exceção de domínio</h2>
  *

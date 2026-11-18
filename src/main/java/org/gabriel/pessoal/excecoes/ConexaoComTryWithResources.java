@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 04 — try-with-resources, AutoCloseable e suppressed</h2>
  *

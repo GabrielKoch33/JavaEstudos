@@ -1,3 +1,5 @@
+package org.gabriel.pessoal.excecoes;
+
 /**
  * <h2>Exceções 08 — Hierarquia de exceções de domínio (mini projeto)</h2>
  *
