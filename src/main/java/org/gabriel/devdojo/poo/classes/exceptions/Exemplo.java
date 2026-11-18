@@ -2,12 +2,13 @@ package org.gabriel.devdojo.poo.classes.exceptions;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InvalidObjectException;
 
 public class Exemplo {
 
-    public static void validaIdade(int age) throws Exception {
+    public static void validaIdade(int age) {
         if (age < 18) {
-            throw new Exception();
+            throw new teste("bola");
         }
         System.out.println("Idade correta!");
     }
@@ -57,9 +58,13 @@ public class Exemplo {
         // caso não ocorra erro, o compilador pula para essa linha e volta ao código normal
 
         try {
-            Exemplo.validaIdade(15);
-        } catch (Exception e) {
-            throw new RuntimeException("idade menor de 18");
+            validaIdade(15);
+        } catch (teste e) {
+            System.out.println("idade menor de 18");
         }
+
+        validaIdade(78);
+
+
     }
 }
