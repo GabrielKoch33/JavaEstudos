@@ -5,6 +5,11 @@ import java.io.IOException;
 
 public class Exemplo {
 
+    /**
+     * Exceções que herdam de runtime NÃO precisam obrigatoriamente propagar via throws
+     * assim como também quem chama não é obrigado a tratar via try catch (vai dar erro caso caia no catch).
+     * Sendo assim o uso de throws opcional.
+     * **/
     public static void validaIdade(int age) {
         if (age < 18) {
             throw new testeRuntime("bola");
@@ -12,6 +17,11 @@ public class Exemplo {
         System.out.println("Idade correta!");
     }
 
+    /**
+     * Exceções checked (herdam de Exception) além de é claro lançar via throw new
+     * elas também devem ser propagadas via throws.
+     * Quem chamou o método 'perigoso' deve tratar ou então lançar novamente via throws
+     * **/
     public static void lancaException(int age) throws testeException {
         if (age == 20) {
             throw new testeException("Erro cabuloso");
@@ -24,9 +34,6 @@ public class Exemplo {
         // podem se referir a erros na jvm, no hardware, falta de recursos
         // não possuem tratamentos
 
-        // unchecked (erro em run time)
-        // o compilador não avisa te erros
-        // erros que o desenvolvedor deveria ter previsto
         int[] arr = {1,2,3};
         try {
             System.out.println("tentando acessar índice inexistente");
@@ -42,12 +49,6 @@ public class Exemplo {
         } catch (NullPointerException e) {
             System.out.println("Objeto null");
         }
-
-
-        // checked
-        // o compilador te avisa de erros antes mesmo do programa rodar
-        // ações que são frágeis e que devem ser verificadas antes de fazer
-        // exigem tratar com Try Catch
 
         File f = new File("arquivo.txt");
         try {

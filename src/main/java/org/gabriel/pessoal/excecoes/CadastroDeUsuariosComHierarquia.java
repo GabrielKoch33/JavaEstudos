@@ -116,6 +116,9 @@ public class CadastroDeUsuariosComHierarquia {
             try {
                 cadastrar(u);
             }
+            catch (EmailInvalidoException e) {
+                System.out.println(e.getMessage());
+            }
             catch (CadastroException e) {
                 System.out.println(e.getMessage());
                 // getMessage é o conteúdo passado no construtor da exceção
